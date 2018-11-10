@@ -57,14 +57,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsCargo.cs" />
-    <Compile Include="clsCategoria.cs" />
-    <Compile Include="clsCliente.cs" />
-    <Compile Include="clsDetalleVenta.cs" />
-    <Compile Include="clsEmpleado.cs" />
-    <Compile Include="clsProducto.cs" />
-    <Compile Include="clsUsuarios.cs" />
-    <Compile Include="clsVentas.cs" />
+    <Compile Include="Cargo.cs" />
+    <Compile Include="Categoria.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="DetalleVenta.cs" />
+    <Compile Include="Empleado.cs" />
+    <Compile Include="Producto.cs" />
+    <Compile Include="Usuarios.cs" />
+    <Compile Include="Ventas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

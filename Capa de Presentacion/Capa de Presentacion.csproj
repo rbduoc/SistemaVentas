@@ -71,133 +71,133 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsVenta.cs" />
-    <Compile Include="FrmListadoCargos.cs">
+    <Compile Include="ListadoCargos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListadoCargos.Designer.cs">
-      <DependentUpon>FrmListadoCargos.cs</DependentUpon>
+    <Compile Include="ListadoCargos.Designer.cs">
+      <DependentUpon>ListadoCargos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListadoEmpleados.cs">
+    <Compile Include="ListadoEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListadoEmpleados.Designer.cs">
-      <DependentUpon>FrmListadoEmpleados.cs</DependentUpon>
+    <Compile Include="ListadoEmpleados.Designer.cs">
+      <DependentUpon>ListadoEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLogin.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLogin.Designer.cs">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMenuPrincipal.cs">
+    <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMenuPrincipal.Designer.cs">
-      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegistrarCargo.cs">
+    <Compile Include="RegistrarCargo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRegistrarCargo.Designer.cs">
-      <DependentUpon>FrmRegistrarCargo.cs</DependentUpon>
+    <Compile Include="RegistrarCargo.Designer.cs">
+      <DependentUpon>RegistrarCargo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegistrarCategoria.cs">
+    <Compile Include="RegistrarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRegistrarCategoria.Designer.cs">
-      <DependentUpon>FrmRegistrarCategoria.cs</DependentUpon>
+    <Compile Include="RegistrarCategoria.Designer.cs">
+      <DependentUpon>RegistrarCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListadoCategoria.cs">
+    <Compile Include="ListadoCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListadoCategoria.Designer.cs">
-      <DependentUpon>FrmListadoCategoria.cs</DependentUpon>
+    <Compile Include="ListadoCategoria.Designer.cs">
+      <DependentUpon>ListadoCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListadoClientes.cs">
+    <Compile Include="ListadoClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListadoClientes.Designer.cs">
-      <DependentUpon>FrmListadoClientes.cs</DependentUpon>
+    <Compile Include="ListadoClientes.Designer.cs">
+      <DependentUpon>ListadoClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListadoProductos.cs">
+    <Compile Include="ListadoProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListadoProductos.Designer.cs">
-      <DependentUpon>FrmListadoProductos.cs</DependentUpon>
+    <Compile Include="ListadoProductos.Designer.cs">
+      <DependentUpon>ListadoProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegistrarEmpleados.cs">
+    <Compile Include="RegistrarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRegistrarEmpleados.Designer.cs">
-      <DependentUpon>FrmRegistrarEmpleados.cs</DependentUpon>
+    <Compile Include="RegistrarEmpleados.Designer.cs">
+      <DependentUpon>RegistrarEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegistrarUsuarios.cs">
+    <Compile Include="RegistrarUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRegistrarUsuarios.Designer.cs">
-      <DependentUpon>FrmRegistrarUsuarios.cs</DependentUpon>
+    <Compile Include="RegistrarUsuarios.Designer.cs">
+      <DependentUpon>RegistrarUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegistroCliente.cs">
+    <Compile Include="RegistroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRegistroCliente.Designer.cs">
-      <DependentUpon>FrmRegistroCliente.cs</DependentUpon>
+    <Compile Include="RegistroCliente.Designer.cs">
+      <DependentUpon>RegistroCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegistroProductos.cs">
+    <Compile Include="RegistroProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRegistroProductos.Designer.cs">
-      <DependentUpon>FrmRegistroProductos.cs</DependentUpon>
+    <Compile Include="RegistroProductos.Designer.cs">
+      <DependentUpon>RegistroProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegistroVentas.cs">
+    <Compile Include="RegistroVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRegistroVentas.Designer.cs">
-      <DependentUpon>FrmRegistroVentas.cs</DependentUpon>
+    <Compile Include="RegistroVentas.Designer.cs">
+      <DependentUpon>RegistroVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmListadoCargos.resx">
-      <DependentUpon>FrmListadoCargos.cs</DependentUpon>
+    <EmbeddedResource Include="ListadoCargos.resx">
+      <DependentUpon>ListadoCargos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListadoEmpleados.resx">
-      <DependentUpon>FrmListadoEmpleados.cs</DependentUpon>
+    <EmbeddedResource Include="ListadoEmpleados.resx">
+      <DependentUpon>ListadoEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLogin.resx">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMenuPrincipal.resx">
-      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegistrarCargo.resx">
-      <DependentUpon>FrmRegistrarCargo.cs</DependentUpon>
+    <EmbeddedResource Include="RegistrarCargo.resx">
+      <DependentUpon>RegistrarCargo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegistrarCategoria.resx">
-      <DependentUpon>FrmRegistrarCategoria.cs</DependentUpon>
+    <EmbeddedResource Include="RegistrarCategoria.resx">
+      <DependentUpon>RegistrarCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListadoCategoria.resx">
-      <DependentUpon>FrmListadoCategoria.cs</DependentUpon>
+    <EmbeddedResource Include="ListadoCategoria.resx">
+      <DependentUpon>ListadoCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListadoClientes.resx">
-      <DependentUpon>FrmListadoClientes.cs</DependentUpon>
+    <EmbeddedResource Include="ListadoClientes.resx">
+      <DependentUpon>ListadoClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListadoProductos.resx">
-      <DependentUpon>FrmListadoProductos.cs</DependentUpon>
+    <EmbeddedResource Include="ListadoProductos.resx">
+      <DependentUpon>ListadoProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegistrarEmpleados.resx">
-      <DependentUpon>FrmRegistrarEmpleados.cs</DependentUpon>
+    <EmbeddedResource Include="RegistrarEmpleados.resx">
+      <DependentUpon>RegistrarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegistrarUsuarios.resx">
-      <DependentUpon>FrmRegistrarUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="RegistrarUsuarios.resx">
+      <DependentUpon>RegistrarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegistroCliente.resx">
-      <DependentUpon>FrmRegistroCliente.cs</DependentUpon>
+    <EmbeddedResource Include="RegistroCliente.resx">
+      <DependentUpon>RegistroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegistroProductos.resx">
-      <DependentUpon>FrmRegistroProductos.cs</DependentUpon>
+    <EmbeddedResource Include="RegistroProductos.resx">
+      <DependentUpon>RegistroProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegistroVentas.resx">
-      <DependentUpon>FrmRegistroVentas.cs</DependentUpon>
+    <EmbeddedResource Include="RegistroVentas.resx">
+      <DependentUpon>RegistroVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

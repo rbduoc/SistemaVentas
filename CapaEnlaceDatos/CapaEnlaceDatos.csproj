@@ -57,8 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsManejador.cs" />
-    <Compile Include="clsParametro.cs" />
+    <Compile Include="Conexion.cs" />
+    <Compile Include="Parametro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
