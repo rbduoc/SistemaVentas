@@ -11,7 +11,7 @@ namespace CapaEnlaceDatos
 {
     public class clsManejador
     {
-        public SqlConnection conexion = new SqlConnection("Server=.;DataBase=DemoPractica;Integrated Security=SSPI");
+        public SqlConnection conexion = new SqlConnection(@"Data Source=DESKTOP-P0ES69G\SQLEXPRESS;Initial Catalog=DemoPractica;Integrated Security=True");
 
         public void Conectar() {
             if (conexion.State == ConnectionState.Closed)
