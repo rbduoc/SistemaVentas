@@ -13,15 +13,63 @@ namespace CapaLogicaNegocio
     {
        Conexion M = new Conexion();
 
-       public int IdCargo { get; set; }
-       public int IdEmpleado { get; set; }
-       public String Dni{get;set;}
-       public String Apellidos{get;set;}
-       public String Nombres { get; set; }
-       public Char Sexo { get; set; }
-       public DateTime FechaNac { get; set; }
-       public String Direccion { get; set; }
-       public Char EstadoCivil { get; set; }
+        private int id_cargo;
+        private int id_empleado;
+        private Int32 rut;
+        private String dv;
+        private String apellidos;
+        private String nombres;
+        private Char sexo;
+        private DateTime fecha_nacimiento;
+        private String direccion;
+
+
+       public int IdCargo
+        {
+            get { return id_cargo; }
+            set { id_cargo = value; }
+        }
+       public int IdEmpleado
+        {
+            get { return id_empleado; }
+            set { id_empleado = value; }
+        }
+       public Int32 Rut
+        {
+            get { return rut; }
+            set { rut = value; }
+        }
+
+        public String Dv
+        {
+            get { return dv; }
+            set { dv = value; }
+        }
+        public String Apellidos
+        {
+            get { return apellidos; }
+            set { apellidos = value; }
+        }
+       public String Nombres
+        {
+            get { return nombres; }
+            set { nombres = value; }
+        }
+       public Char Sexo
+        {
+            get { return sexo; }
+            set { sexo = value; }
+        }
+       public DateTime FechaNac
+        {
+            get { return fecha_nacimiento; }
+            set { fecha_nacimiento = value; }
+        }
+       public String Direccion
+        {
+            get { return direccion; }
+            set { direccion = value; }
+        }
 
 
        public String MantenimientoEmpleados() {
@@ -30,13 +78,13 @@ namespace CapaLogicaNegocio
            try{
                lst.Add(new Parametro("@IdEmpleado", IdEmpleado));
                lst.Add(new Parametro("@IdCargo", IdCargo));
-               lst.Add(new Parametro("@Dni", Dni));
-               lst.Add(new Parametro("@Apellidos", Apellidos));
+               lst.Add(new Parametro("@RUT", rut));
+                lst.Add(new Parametro("@DV", rut));
+                lst.Add(new Parametro("@Apellidos", Apellidos));
                lst.Add(new Parametro("@Nombres", Nombres));
                lst.Add(new Parametro("@Sexo", Sexo));
                lst.Add(new Parametro("@FechaNac", FechaNac));
                lst.Add(new Parametro("@Direccion", Direccion));
-               lst.Add(new Parametro("@EstadoCivil", EstadoCivil));
                lst.Add(new Parametro("@Mensaje","",SqlDbType.VarChar,ParameterDirection.Output,100));
                M.EjecutarSP("MantenimientoEmpleados",ref lst);
                return Mensaje = lst[9].Valor.ToString();

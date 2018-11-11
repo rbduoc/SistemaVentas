@@ -37,15 +37,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtDni = new System.Windows.Forms.TextBox();
+            this.txtRut = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDV = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(331, 106);
+            this.button2.Location = new System.Drawing.Point(318, 284);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 27);
             this.button2.TabIndex = 5;
@@ -56,7 +58,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(331, 45);
+            this.button1.Location = new System.Drawing.Point(225, 284);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 27);
             this.button1.TabIndex = 4;
@@ -68,7 +70,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 208);
+            this.label5.Location = new System.Drawing.Point(10, 207);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 16);
             this.label5.TabIndex = 2;
@@ -76,21 +78,21 @@
             // 
             // txtNombres
             // 
-            this.txtNombres.Location = new System.Drawing.Point(14, 125);
+            this.txtNombres.Location = new System.Drawing.Point(14, 124);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(298, 21);
             this.txtNombres.TabIndex = 3;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(14, 226);
+            this.txtTelefono.Location = new System.Drawing.Point(14, 225);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(298, 21);
             this.txtTelefono.TabIndex = 3;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(14, 175);
+            this.txtDireccion.Location = new System.Drawing.Point(14, 174);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(298, 21);
             this.txtDireccion.TabIndex = 3;
@@ -99,7 +101,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 157);
+            this.label4.Location = new System.Drawing.Point(10, 156);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 16);
             this.label4.TabIndex = 1;
@@ -107,7 +109,7 @@
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(14, 75);
+            this.txtApellidos.Location = new System.Drawing.Point(14, 74);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(298, 21);
             this.txtApellidos.TabIndex = 3;
@@ -116,25 +118,25 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 57);
+            this.label3.Location = new System.Drawing.Point(10, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Apellidos";
             // 
-            // txtDni
+            // txtRut
             // 
-            this.txtDni.Location = new System.Drawing.Point(14, 24);
-            this.txtDni.MaxLength = 8;
-            this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(298, 21);
-            this.txtDni.TabIndex = 3;
+            this.txtRut.Location = new System.Drawing.Point(14, 24);
+            this.txtRut.MaxLength = 8;
+            this.txtRut.Name = "txtRut";
+            this.txtRut.Size = new System.Drawing.Size(100, 21);
+            this.txtRut.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 106);
+            this.label2.Location = new System.Drawing.Point(10, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 16);
             this.label2.TabIndex = 1;
@@ -148,13 +150,31 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "D.N.I";
+            this.label1.Text = "RUT";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(136, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 16);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "DV";
+            // 
+            // txtDV
+            // 
+            this.txtDV.Location = new System.Drawing.Point(139, 24);
+            this.txtDV.Name = "txtDV";
+            this.txtDV.Size = new System.Drawing.Size(35, 21);
+            this.txtDV.TabIndex = 7;
             // 
             // RegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 258);
+            this.ClientSize = new System.Drawing.Size(421, 333);
+            this.Controls.Add(this.txtDV);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtNombres);
@@ -162,7 +182,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.txtDni);
+            this.Controls.Add(this.txtRut);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -194,7 +214,9 @@
         public System.Windows.Forms.TextBox txtTelefono;
         public System.Windows.Forms.TextBox txtDireccion;
         public System.Windows.Forms.TextBox txtApellidos;
-        public System.Windows.Forms.TextBox txtDni;
+        public System.Windows.Forms.TextBox txtRut;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox txtDV;
     }
 }
 

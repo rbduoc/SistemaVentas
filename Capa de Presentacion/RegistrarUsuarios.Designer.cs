@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblDni = new System.Windows.Forms.Label();
-            this.lblCargo = new System.Windows.Forms.Label();
-            this.lblEmpleado = new System.Windows.Forms.Label();
+            this.txtRut = new System.Windows.Forms.Label();
+            this.txtCargo = new System.Windows.Forms.Label();
+            this.txtEmpleado = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,61 +41,65 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDV = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblDni);
-            this.groupBox1.Controls.Add(this.lblCargo);
-            this.groupBox1.Controls.Add(this.lblEmpleado);
+            this.groupBox1.Controls.Add(this.txtDV);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txtRut);
+            this.groupBox1.Controls.Add(this.txtCargo);
+            this.groupBox1.Controls.Add(this.txtEmpleado);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(464, 100);
+            this.groupBox1.Size = new System.Drawing.Size(464, 121);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Empleado";
             // 
-            // lblDni
+            // txtRut
             // 
-            this.lblDni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDni.Location = new System.Drawing.Point(70, 63);
-            this.lblDni.Name = "lblDni";
-            this.lblDni.Size = new System.Drawing.Size(131, 21);
-            this.lblDni.TabIndex = 8;
-            this.lblDni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtRut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRut.Location = new System.Drawing.Point(70, 63);
+            this.txtRut.Name = "txtRut";
+            this.txtRut.Size = new System.Drawing.Size(131, 21);
+            this.txtRut.TabIndex = 8;
+            this.txtRut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblCargo
+            // txtCargo
             // 
-            this.lblCargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCargo.Location = new System.Drawing.Point(273, 65);
-            this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(169, 21);
-            this.lblCargo.TabIndex = 7;
-            this.lblCargo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtCargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCargo.Location = new System.Drawing.Point(273, 65);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(169, 21);
+            this.txtCargo.TabIndex = 7;
+            this.txtCargo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblEmpleado
+            // txtEmpleado
             // 
-            this.lblEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEmpleado.Location = new System.Drawing.Point(163, 30);
-            this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(279, 21);
-            this.lblEmpleado.TabIndex = 6;
-            this.lblEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmpleado.Location = new System.Drawing.Point(163, 30);
+            this.txtEmpleado.Name = "txtEmpleado";
+            this.txtEmpleado.Size = new System.Drawing.Size(279, 21);
+            this.txtEmpleado.TabIndex = 6;
+            this.txtEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(21, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 16);
+            this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 4;
-            this.label3.Text = "D.N.I :";
+            this.label3.Text = "RUT";
             // 
             // label2
             // 
@@ -123,7 +127,7 @@
             this.groupBox2.Controls.Add(this.txtUser);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 118);
+            this.groupBox2.Location = new System.Drawing.Point(12, 139);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(464, 80);
             this.groupBox2.TabIndex = 1;
@@ -136,7 +140,7 @@
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 27);
             this.btnGrabar.TabIndex = 4;
-            this.btnGrabar.Text = "&Grabar";
+            this.btnGrabar.Text = "Guardar";
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
@@ -173,19 +177,35 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Usuario";
             // 
-            // FrmRegistrarUsuarios
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 92);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 16);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "DV";
+            // 
+            // txtDV
+            // 
+            this.txtDV.Location = new System.Drawing.Point(70, 92);
+            this.txtDV.Name = "txtDV";
+            this.txtDV.Size = new System.Drawing.Size(29, 21);
+            this.txtDV.TabIndex = 10;
+            // 
+            // RegistrarUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 214);
+            this.ClientSize = new System.Drawing.Size(490, 252);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
-            this.Name = "FrmRegistrarUsuarios";
+            this.Name = "RegistrarUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmRegistrarUsuarios";
+            this.Text = "Registrar Usuarios";
             this.Load += new System.EventHandler(this.FrmRegistrarUsuarios_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -207,8 +227,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.Label lblEmpleado;
-        public System.Windows.Forms.Label lblDni;
-        public System.Windows.Forms.Label lblCargo;
+        public System.Windows.Forms.Label txtEmpleado;
+        public System.Windows.Forms.Label txtRut;
+        public System.Windows.Forms.Label txtCargo;
+        private System.Windows.Forms.TextBox txtDV;
+        private System.Windows.Forms.Label label6;
     }
 }

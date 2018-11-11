@@ -15,47 +15,54 @@ namespace CapaLogicaNegocio
     {
         private Conexion M = new Conexion();
 
-        private String m_Dni;
-        private String m_Apellidos;
-        private String m_Nombres;
-        private String m_Direccion;
-        private String m_Telefono;
+        private int rut;
+        private String dv;
+        private String apellidos;
+        private String nombres;
+        private String direccion;
+        private String telefono;
 
 
-        public String Dni{
-            get { return m_Dni; }
-            set { m_Dni = value; }
+        public int Rut
+        {
+            get { return rut; }
+            set { rut = value; }
+        }
+        public String Dv
+        {
+            get { return dv; }
+            set { dv = value; }
         }
 
         public String Apellidos{
-            get { return m_Apellidos; }
-            set { m_Apellidos = value; }
+            get { return apellidos; }
+            set { apellidos = value; }
         }
 
         public String Nombres{
-            get { return m_Nombres; }
-            set { m_Nombres = value; }
+            get { return nombres; }
+            set { nombres = value; }
         }
 
         public String Telefono{
-            get { return m_Telefono; }
-            set { m_Telefono = value; }
+            get { return telefono; }
+            set { telefono = value; }
         }
 
         public String Direccion{
-            get { return m_Direccion; }
-            set { m_Direccion = value; }
+            get { return direccion; }
+            set { direccion = value; }
         }
 
         public DataTable Listado() {
-           return M.Listado("ListarClientes", null);
+           return M.Listado("SVC_SLCT_CLIENTES", null);
         }
 
         public DataTable BuscarCliente(String objDatos) {
             DataTable dt = new DataTable();
             List<Parametro> lst = new List<Parametro>();
-            lst.Add(new Parametro("@Datos",objDatos));
-            return dt=M.Listado("FiltrarDatosCliente",lst);
+            lst.Add(new Parametro("@DATOS", objDatos));
+            return dt=M.Listado("SVC_SLCT_FILTRA_CLIENTE", lst);
         }
 
         public String RegistrarCliente() {
@@ -63,14 +70,15 @@ namespace CapaLogicaNegocio
             String Mensaje = "";
             try
             {
-                lst.Add(new Parametro("@DNI",m_Dni));
-                lst.Add(new Parametro("@Apellidos",m_Apellidos));
-                lst.Add(new Parametro("@Nombres",m_Nombres));
-                lst.Add(new Parametro("@Direccion",m_Direccion));
-                lst.Add(new Parametro("@Telefono",m_Telefono));
-                lst.Add(new Parametro("@Mensaje","",SqlDbType.VarChar,ParameterDirection.Output,50));
-                M.EjecutarSP("RegistrarCliente", ref lst);
-                Mensaje=lst[5].Valor.ToString();
+                lst.Add(new Parametro("@RUT", rut));
+                lst.Add(new Parametro("@DV", dv));
+                lst.Add(new Parametro("@APELLIDOS",apellidos));
+                lst.Add(new Parametro("@NOMBRES",nombres));
+                lst.Add(new Parametro("@DIRECCION",direccion));
+                lst.Add(new Parametro("@TELEFONO",telefono));
+                lst.Add(new Parametro("@MENSAJE","",SqlDbType.VarChar,ParameterDirection.Output,50));
+                M.EjecutarSP("SVC_INS_REGISTRAR_CLIENTE", ref lst);
+                Mensaje=lst[6].Valor.ToString();
             }
             catch (Exception ex)
             {
@@ -85,14 +93,15 @@ namespace CapaLogicaNegocio
             String Mensaje = "";
             try
             {
-                lst.Add(new Parametro("@DNI", m_Dni));
-                lst.Add(new Parametro("@Apellidos", m_Apellidos));
-                lst.Add(new Parametro("@Nombres", m_Nombres));
-                lst.Add(new Parametro("@Direccion", m_Direccion));
-                lst.Add(new Parametro("@Telefono", m_Telefono));
-                lst.Add(new Parametro("@Mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
-                M.EjecutarSP("ActualizarCliente", ref lst);
-                Mensaje = lst[5].Valor.ToString();
+                lst.Add(new Parametro("@RUT", rut));
+                lst.Add(new Parametro("@DV", dv));
+                lst.Add(new Parametro("@APELLIDOS", apellidos));
+                lst.Add(new Parametro("@NOMBRES", nombres));
+                lst.Add(new Parametro("@DIRECCION", direccion));
+                lst.Add(new Parametro("@TELEFONO", telefono));
+                lst.Add(new Parametro("@MENSAJE", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+                M.EjecutarSP("SVC_UPD_MODIFICA_CLIENTE", ref lst);
+                Mensaje = lst[6].Valor.ToString();
             }
             catch (Exception ex)
             {

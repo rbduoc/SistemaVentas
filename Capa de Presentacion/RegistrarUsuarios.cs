@@ -62,9 +62,9 @@ namespace Capa_de_Presentacion
             txtUser.Clear();
             Program.IdEmpleado = 0;
             txtUser.Focus();
-            lblCargo.Text = "";
-            lblDni.Text = "";
-            lblEmpleado.Text = "";
+            txtCargo.Text = "";
+            txtRut.Text = "";
+            txtEmpleado.Text = "";
         }
     }
 }

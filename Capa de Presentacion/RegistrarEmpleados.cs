@@ -44,22 +44,13 @@ namespace Capa_de_Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            Char EstadoCivil='S';
             E.IdEmpleado = Convert.ToInt32(txtIdE.Text);
             E.IdCargo = Convert.ToInt32(comboBox1.SelectedValue);
-            E.Dni = txtDni.Text;
+            E.Rut = Convert.ToInt32(txtDni.Text);
             E.Apellidos = txtApellidos.Text;
             E.Nombres = txtNombres.Text;
             E.Sexo=rbnMasculino.Checked==true?'M':'F';
             E.FechaNac = Convert.ToDateTime(dateTimePicker1.Value);
-            switch (cbxEstadoCivil.SelectedIndex)
-            {
-                case 1: EstadoCivil = 'S'; break;
-                case 2: EstadoCivil = 'C'; break;
-                case 3: EstadoCivil = 'D'; break;
-                case 4: EstadoCivil = 'V'; break;
-            }
-            E.EstadoCivil=EstadoCivil;
             E.Direccion = txtDireccion.Text;
             MessageBoxEx.Show(E.MantenimientoEmpleados(), "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             Limpiar();

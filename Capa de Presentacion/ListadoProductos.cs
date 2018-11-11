@@ -26,12 +26,12 @@ namespace Capa_de_Presentacion
         private void FrmProductos_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            timer1.Interval = 5000;
+            timer1.Interval = 30000;
             CargarListado();
             dataGridView1.ClearSelection();
         }
 
-        private void CargarListado() {
+        public void CargarListado() {
             DataTable dt = new DataTable();
             dt = P.Listar();
             try
@@ -46,8 +46,6 @@ namespace Capa_de_Presentacion
                     dataGridView1.Rows[i].Cells[3].Value = dt.Rows[i][3].ToString();
                     dataGridView1.Rows[i].Cells[4].Value = dt.Rows[i][4].ToString();
                     dataGridView1.Rows[i].Cells[5].Value = dt.Rows[i][5].ToString();
-                    dataGridView1.Rows[i].Cells[6].Value = dt.Rows[i][6].ToString();
-                    dataGridView1.Rows[i].Cells[7].Value = Convert.ToDateTime(dt.Rows[i][7].ToString()).ToShortDateString();
                 }
             }
             catch (Exception ex)
@@ -70,7 +68,7 @@ namespace Capa_de_Presentacion
         {
             if (MessageBoxEx.Show("¿Está Seguro que Desea Salir.?", "Sistema de Ventas.", MessageBoxButtons.YesNo,MessageBoxIcon.Error) == DialogResult.Yes)
             {
-                Close();
+                this.Close();
             }
         }
 
@@ -82,10 +80,10 @@ namespace Capa_de_Presentacion
             //    //dataGridView1.ClearSelection();
             //    //P.Show();
             //}else{
-                RegistroProductos P = new RegistroProductos();
-                if (dataGridView1.SelectedRows.Count > 0)
-                    Program.Evento = 1;
-                else
+                RegistroProductos P = new RegistroProductos(this);
+                //if (dataGridView1.SelectedRows.Count > 0)
+                //    Program.Evento = 1;
+                //else
                     Program.Evento = 0;
                 dataGridView1.ClearSelection();
                 P.Show();
@@ -95,20 +93,18 @@ namespace Capa_de_Presentacion
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0) {
-                RegistroProductos P = new RegistroProductos();
+                RegistroProductos P = new RegistroProductos(this);
                 P.txtIdP.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 P.IdC.Text= dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 P.txtProducto.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 P.txtMarca.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                P.txtPCompra.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                P.txtPVenta.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                P.txtStock.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                P.dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[7].Value.ToString());
+                P.txtPVenta.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                P.txtStock.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 P.Show();
-                if (dataGridView1.SelectedRows.Count > 0)
+                //if (dataGridView1.SelectedRows.Count > 0)
                     Program.Evento = 1;
-                else
-                    Program.Evento = 0;
+                //else
+                //    Program.Evento = 0;
                 dataGridView1.ClearSelection();
             }
             else {
@@ -140,8 +136,7 @@ namespace Capa_de_Presentacion
                     dataGridView1.Rows[i].Cells[3].Value = dt.Rows[i][3].ToString();
                     dataGridView1.Rows[i].Cells[4].Value = dt.Rows[i][4].ToString();
                     dataGridView1.Rows[i].Cells[5].Value = dt.Rows[i][5].ToString();
-                    dataGridView1.Rows[i].Cells[6].Value = dt.Rows[i][6].ToString();
-                    dataGridView1.Rows[i].Cells[7].Value = Convert.ToDateTime(dt.Rows[i][7].ToString()).ToShortDateString();
+
                 }
             }
             catch (Exception ex)
@@ -176,11 +171,14 @@ namespace Capa_de_Presentacion
                 Program.IdProducto = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                 Program.Descripcion = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 Program.Marca = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                Program.PrecioVenta = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[5].Value.ToString());
-                Program.Stock = Convert.ToInt32(dataGridView1.CurrentRow.Cells[6].Value.ToString());
+                Program.PrecioVenta = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[4].Value.ToString());
+                Program.Stock = Convert.ToInt32(dataGridView1.CurrentRow.Cells[5].Value.ToString());
                 this.Close();
         }
 
+        private void txtBuscarProducto_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

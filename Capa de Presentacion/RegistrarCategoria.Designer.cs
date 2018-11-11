@@ -41,9 +41,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(5, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 16);
+            this.label1.Size = new System.Drawing.Size(94, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Categoria";
+            this.label1.Text = "Estilo Cerveza";
             // 
             // txtCategoria
             // 
@@ -85,11 +85,11 @@
             this.IdC.TabIndex = 4;
             this.IdC.Visible = false;
             // 
-            // FrmRegistrarCategoria
+            // RegistrarCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 60);
+            this.ClientSize = new System.Drawing.Size(319, 69);
             this.Controls.Add(this.IdC);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -98,9 +98,9 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "FrmRegistrarCategoria";
+            this.Name = "RegistrarCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmCategoria";
+            this.Text = "Categoria";
             this.ResumeLayout(false);
             this.PerformLayout();
 

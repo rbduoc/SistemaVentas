@@ -17,10 +17,18 @@ namespace Capa_de_Presentacion
     {
         private Categoria C = new Categoria();
         private Producto P = new Producto();
+        private ListadoProductos listadoView;
 
         public RegistroProductos()
         {
             InitializeComponent();
+        }
+
+        public RegistroProductos(ListadoProductos list)
+        {
+            InitializeComponent();
+
+            listadoView = list;
         }
 
         private void FrmRegistroProductos_Load(object sender, EventArgs e)
@@ -51,8 +59,6 @@ namespace Capa_de_Presentacion
             {
                 if (txtMarca.Text.Trim() != "")
                 {
-                    if (txtPCompra.Text.Trim() != "")
-                    {
                         if (txtPVenta.Text.Trim() != "")
                         {
                             if (txtStock.Text.Trim() != "")
@@ -60,12 +66,10 @@ namespace Capa_de_Presentacion
                                 if (Program.Evento == 0)
                                 {
                                     P.IdCategoria = Convert.ToInt32(cbxCategoria.SelectedValue);
-                                    P.Producto = txtProducto.Text;
+                                    P.ProductoNombre = txtProducto.Text;
                                     P.Marca = txtMarca.Text;
-                                    P.PrecioCompra = Convert.ToDecimal(txtPCompra.Text);
-                                    P.PrecioVenta = Convert.ToDecimal(txtPVenta.Text);
+                                    P.Precio = Convert.ToInt32(txtPVenta.Text);
                                     P.Stock = Convert.ToInt32(txtStock.Text);
-                                    P.FechaVencimiento = Convert.ToDateTime(dateTimePicker1.Value);
                                     Mensaje = P.RegistrarProductos();
                                     if (Mensaje == "Este Producto ya ha sido Registrado."){
                                         MessageBoxEx.Show(Mensaje, "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -78,14 +82,14 @@ namespace Capa_de_Presentacion
                                 {
                                     P.IdP = Convert.ToInt32(txtIdP.Text);
                                     P.IdCategoria = Convert.ToInt32(cbxCategoria.SelectedValue);
-                                    P.Producto = txtProducto.Text;
+                                    P.ProductoNombre = txtProducto.Text;
                                     P.Marca = txtMarca.Text;
-                                    P.PrecioCompra = Convert.ToDecimal(txtPCompra.Text);
-                                    P.PrecioVenta = Convert.ToDecimal(txtPVenta.Text);
+                                    P.Precio = Convert.ToInt32(txtPVenta.Text);
                                     P.Stock = Convert.ToInt32(txtStock.Text);
-                                    P.FechaVencimiento = Convert.ToDateTime(dateTimePicker1.Value);
                                     MessageBoxEx.Show(P.ActualizarProductos(), "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    Limpiar();
+                                    Limpiar(); 
+                                    this.Close();
+
                                 }
                             }
                             else
@@ -93,17 +97,6 @@ namespace Capa_de_Presentacion
                                 MessageBoxEx.Show("Por Favor Ingrese Stock del Producto.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 txtStock.Focus();
                             }
-                        }
-                        else
-                        {
-                            MessageBoxEx.Show("Por Favor Ingrese Precio de Venta del Producto.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txtPVenta.Focus();
-                        }
-                    }
-                    else
-                    {
-                        MessageBoxEx.Show("Por Favor Ingrese Precio de Compra del Producto.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtPCompra.Focus();
                     }
                 }
                 else
@@ -118,6 +111,7 @@ namespace Capa_de_Presentacion
             }
             ListadoProductos LP = new ListadoProductos();
             LP.timer1.Start();
+            listadoView.CargarListado();
         }
 
         private void btnCategoria_Click(object sender, EventArgs e)
@@ -129,12 +123,10 @@ namespace Capa_de_Presentacion
         private void Limpiar() {
             txtProducto.Text = "";
             txtMarca.Clear();
-            txtPCompra.Clear();
             txtPVenta.Clear();
             IdC.Clear();
             txtIdP.Clear();
             txtStock.Clear();
-            dateTimePicker1.Value = DateTime.Now;
             txtProducto.Focus();
         }
 
@@ -148,30 +140,30 @@ namespace Capa_de_Presentacion
 
         private void txtPCompra_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (this.txtPCompra.Text.Contains('.'))
-            {
-                if (!char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
+            //if (this.txtPCompra.Text.Contains('.'))
+            //{
+            //    if (!char.IsDigit(e.KeyChar))
+            //    {
+            //        e.Handled = true;
+            //    }
 
-                if (e.KeyChar == '\b')
-                {
-                    e.Handled = false;
-                }
-            }
-            else
-            {
-                if (!char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
+            //    if (e.KeyChar == '\b')
+            //    {
+            //        e.Handled = false;
+            //    }
+            //}
+            //else
+            //{
+            //    if (!char.IsDigit(e.KeyChar))
+            //    {
+            //        e.Handled = true;
+            //    }
 
-                if (e.KeyChar == '.' || e.KeyChar == '\b')
-                {
-                    e.Handled = false;
-                }
-            }
+            //    if (e.KeyChar == '.' || e.KeyChar == '\b')
+            //    {
+            //        e.Handled = false;
+            //    }
+            //}
         }
 
         private void txtPVenta_KeyPress(object sender, KeyPressEventArgs e)

@@ -27,12 +27,12 @@ namespace Capa_de_Presentacion
         private void FrmListadoClientes_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            timer1.Interval = 5000;
+            timer1.Interval = 30000;
             ListarClientes();
             dataGridView1.ClearSelection();
         }
 
-        private void ListarClientes() {
+        public void ListarClientes() {
             DataTable dt = new DataTable();
             dt = C.Listado();
             try
@@ -47,6 +47,7 @@ namespace Capa_de_Presentacion
                     dataGridView1.Rows[i].Cells[3].Value = dt.Rows[i][3].ToString();
                     dataGridView1.Rows[i].Cells[4].Value = dt.Rows[i][4].ToString();
                     dataGridView1.Rows[i].Cells[5].Value = dt.Rows[i][5].ToString();
+                    dataGridView1.Rows[i].Cells[6].Value = dt.Rows[i][6].ToString();
                 }
                 dataGridView1.ClearSelection();
             }
@@ -64,7 +65,7 @@ namespace Capa_de_Presentacion
             //}
             //else
             //{
-                RegistroCliente C = new RegistroCliente(); 
+                RegistroCliente C = new RegistroCliente(this); 
                 if (dataGridView1.SelectedRows.Count > 0)
                     Program.Evento = 1;
                 else
@@ -79,13 +80,14 @@ namespace Capa_de_Presentacion
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                RegistroCliente FrmC = new RegistroCliente();
-                FrmC.txtDni.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                FrmC.txtApellidos.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                FrmC.txtNombres.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                FrmC.txtDireccion.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                FrmC.txtTelefono.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                FrmC.txtDni.Focus();
+                RegistroCliente FrmC = new RegistroCliente(this);
+                FrmC.txtRut.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                FrmC.txtDV.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                FrmC.txtApellidos.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                FrmC.txtNombres.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                FrmC.txtDireccion.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                FrmC.txtTelefono.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                FrmC.txtRut.Focus();
                 FrmC.Show();
                 if (dataGridView1.SelectedRows.Count > 0)
                     Program.Evento = 1;
@@ -114,8 +116,8 @@ namespace Capa_de_Presentacion
             if (e.KeyChar == 13)
             {
                 DataTable dt = new DataTable();
-                C.Dni = txtBuscarCliente.Text;
-                dt = C.BuscarCliente(C.Dni);
+                C.Nombres = txtBuscarCliente.Text;
+                dt = C.BuscarCliente(C.Nombres);
                 try
                 {
                     dataGridView1.Rows.Clear();
@@ -128,6 +130,7 @@ namespace Capa_de_Presentacion
                         dataGridView1.Rows[i].Cells[3].Value = dt.Rows[i][3].ToString();
                         dataGridView1.Rows[i].Cells[4].Value = dt.Rows[i][4].ToString();
                         dataGridView1.Rows[i].Cells[5].Value = dt.Rows[i][5].ToString();
+                        dataGridView1.Rows[i].Cells[6].Value = dt.Rows[i][6].ToString();
                     }
                     dataGridView1.ClearSelection();
                     timer1.Stop();
@@ -156,7 +159,7 @@ namespace Capa_de_Presentacion
         {
             if(MessageBoxEx.Show("¿Está Seguro que Desea Sair.?", "Sistema de Ventas.", MessageBoxButtons.YesNo,MessageBoxIcon.Error) == DialogResult.Yes)
             {
-                Close();
+                this.Close();
             }
         }
 
@@ -184,12 +187,12 @@ namespace Capa_de_Presentacion
                     Resultado = MessageBoxEx.Show("Está Seguro que Desea Editar Los Datos del Cliente.", "Sistema de Ventas.", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                     if (Resultado == DialogResult.Yes){
                         RegistroCliente FrmC = new RegistroCliente();
-                        FrmC.txtDni.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                        FrmC.txtRut.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                         FrmC.txtApellidos.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                         FrmC.txtNombres.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                         FrmC.txtDireccion.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                         FrmC.txtTelefono.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                        FrmC.txtDni.Focus();
+                        FrmC.txtRut.Focus();
                         FrmC.Show();
                         if (dataGridView1.SelectedRows.Count > 0)
                             Program.Evento = 1;

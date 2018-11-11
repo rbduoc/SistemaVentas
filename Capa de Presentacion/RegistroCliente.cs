@@ -16,15 +16,23 @@ namespace Capa_de_Presentacion
     public partial class RegistroCliente : Form
     {
         private Cliente C = new Cliente();
+        private ListadoClientes listaClientes;
 
         public RegistroCliente()
         {
             InitializeComponent();
         }
 
+        public RegistroCliente(ListadoClientes list)
+        {
+            InitializeComponent();
+
+            listaClientes = list;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtDni.Text.Trim() != "")
+            if (txtRut.Text.Trim() != "")
             {
                 if (txtApellidos.Text.Trim() != "")
                 {
@@ -37,7 +45,8 @@ namespace Capa_de_Presentacion
 
                                 if (Program.Evento == 0)
                                 {
-                                    C.Dni = txtDni.Text;
+                                    C.Rut = Convert.ToInt32(txtRut.Text);
+                                    C.Dv = txtDV.Text;
                                     C.Apellidos = txtApellidos.Text;
                                     C.Nombres = txtNombres.Text;
                                     C.Direccion = txtDireccion.Text;
@@ -47,7 +56,8 @@ namespace Capa_de_Presentacion
                                 }
                                 else
                                 {
-                                    C.Dni = txtDni.Text;
+                                    C.Rut = Convert.ToInt32(txtRut.Text);
+                                    C.Dv = txtDV.Text;
                                     C.Apellidos = txtApellidos.Text;
                                     C.Nombres = txtNombres.Text;
                                     C.Direccion = txtDireccion.Text;
@@ -82,22 +92,25 @@ namespace Capa_de_Presentacion
             }
             else {
                 DevComponents.DotNetBar.MessageBoxEx.Show("Por Favor Ingrese N° de D.N.I del Cliente.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtDni.Focus();
+                txtRut.Focus();
             }
+
+            listaClientes.ListarClientes();
        }
 
         private void Limpiar() {
-            txtDni.Text = "";
+            txtRut.Text = "";
+            txtDV.Text = "";
             txtApellidos.Clear();
             txtNombres.Clear();
             txtDireccion.Clear();
             txtTelefono.Clear();
-            txtDni.Focus();
+            txtRut.Focus();
         }
 
         private void FrmRegistroCliente_Load(object sender, EventArgs e)
         {
-            txtDni.Focus();
+            txtRut.Focus();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -110,7 +123,7 @@ namespace Capa_de_Presentacion
 
         private void FrmRegistroCliente_Activated(object sender, EventArgs e)
         {
-            txtDni.Focus();
+            txtRut.Focus();
         }
     }
 }
