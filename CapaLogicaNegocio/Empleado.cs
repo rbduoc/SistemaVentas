@@ -72,21 +72,21 @@ namespace CapaLogicaNegocio
         }
 
 
-       public String MantenimientoEmpleados() {
+       public String RegistrarEmpleado() {
            List<Parametro> lst = new List<Parametro>();
            String Mensaje = "";
            try{
-               lst.Add(new Parametro("@IdEmpleado", IdEmpleado));
-               lst.Add(new Parametro("@IdCargo", IdCargo));
+               lst.Add(new Parametro("@ID_EMPLEADO", IdEmpleado));
+               lst.Add(new Parametro("@ID_CARGO", IdCargo));
                lst.Add(new Parametro("@RUT", rut));
                 lst.Add(new Parametro("@DV", rut));
-                lst.Add(new Parametro("@Apellidos", Apellidos));
-               lst.Add(new Parametro("@Nombres", Nombres));
-               lst.Add(new Parametro("@Sexo", Sexo));
-               lst.Add(new Parametro("@FechaNac", FechaNac));
-               lst.Add(new Parametro("@Direccion", Direccion));
-               lst.Add(new Parametro("@Mensaje","",SqlDbType.VarChar,ParameterDirection.Output,100));
-               M.EjecutarSP("MantenimientoEmpleados",ref lst);
+                lst.Add(new Parametro("@APELLIDOS", Apellidos));
+               lst.Add(new Parametro("@NOMBRES", Nombres));
+               lst.Add(new Parametro("@SEXO", Sexo));
+               lst.Add(new Parametro("@FECHA_NAC", FechaNac));
+               lst.Add(new Parametro("@DIRECCION", Direccion));
+               lst.Add(new Parametro("@MENSAJE","",SqlDbType.VarChar,ParameterDirection.Output,100));
+               M.EjecutarSP("SVC_INS_REGISTRAR_EMPLEADO", ref lst);
                return Mensaje = lst[9].Valor.ToString();
 
            }
@@ -95,7 +95,33 @@ namespace CapaLogicaNegocio
            }
        }
 
-       public DataTable ListadoEmpleados() {
+        public String ActualizarEmpleado()
+        {
+            List<Parametro> lst = new List<Parametro>();
+            String Mensaje = "";
+            try
+            {
+                lst.Add(new Parametro("@ID_EMPLEADO", IdEmpleado));
+                lst.Add(new Parametro("@ID_CARGO", IdCargo));
+                lst.Add(new Parametro("@RUT", rut));
+                lst.Add(new Parametro("@DV", rut));
+                lst.Add(new Parametro("@APELLIDOS", Apellidos));
+                lst.Add(new Parametro("@NOMBRES", Nombres));
+                lst.Add(new Parametro("@SEXO", Sexo));
+                lst.Add(new Parametro("@FECHA_NAC", FechaNac));
+                lst.Add(new Parametro("@DIRECCION", Direccion));
+                lst.Add(new Parametro("@MENSAJE", "", SqlDbType.VarChar, ParameterDirection.Output, 100));
+                M.EjecutarSP("SVC_UPD_MODIFICA_EMPLEADO", ref lst);
+                return Mensaje = lst[9].Valor.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataTable ListadoEmpleados() {
           return M.Listado("ListadoEmpleados", null);
        }
 
@@ -103,8 +129,8 @@ namespace CapaLogicaNegocio
            List<Parametro> lst = new List<Parametro>();
            int objIdEmpleado;
            try{
-               lst.Add(new Parametro("@IdEmpleado","",SqlDbType.Int,ParameterDirection.Output,4));
-               M.EjecutarSP("GenerarIdEmpleado", ref lst);
+               lst.Add(new Parametro("@ID_EMPLEADO", "",SqlDbType.Int,ParameterDirection.Output,4));
+               M.EjecutarSP("SVC_PRC_GENERA_ID_EMPLEADO", ref lst);
                objIdEmpleado = Convert.ToInt32(lst[0].Valor.ToString());
            }catch (Exception ex){
                throw ex;

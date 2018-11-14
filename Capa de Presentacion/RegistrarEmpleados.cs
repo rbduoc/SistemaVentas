@@ -44,23 +44,43 @@ namespace Capa_de_Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            E.IdEmpleado = Convert.ToInt32(txtIdE.Text);
-            E.IdCargo = Convert.ToInt32(comboBox1.SelectedValue);
-            E.Rut = Convert.ToInt32(txtDni.Text);
-            E.Apellidos = txtApellidos.Text;
-            E.Nombres = txtNombres.Text;
-            E.Sexo=rbnMasculino.Checked==true?'M':'F';
-            E.FechaNac = Convert.ToDateTime(dateTimePicker1.Value);
-            E.Direccion = txtDireccion.Text;
-            MessageBoxEx.Show(E.MantenimientoEmpleados(), "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            Limpiar();
+            if (Program.Evento == 0)
+            {
+                E.IdEmpleado = Convert.ToInt32(txtIdE.Text);
+                E.IdCargo = Convert.ToInt32(comboBox1.SelectedValue);
+                E.Rut = Convert.ToInt32(txtRut.Text);
+                E.Dv = txtRut.Text;
+                E.Apellidos = txtApellidos.Text;
+                E.Nombres = txtNombres.Text;
+                E.Sexo = rbnMasculino.Checked == true ? 'M' : 'F';
+                E.FechaNac = Convert.ToDateTime(dateTimePicker1.Value);
+                E.Direccion = txtDireccion.Text;
+                MessageBoxEx.Show(E.RegistrarEmpleado(), "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                Limpiar();
+
+            } else {
+
+                E.IdEmpleado = Convert.ToInt32(txtIdE.Text);
+                E.IdCargo = Convert.ToInt32(comboBox1.SelectedValue);
+                E.Rut = Convert.ToInt32(txtRut.Text);
+                E.Dv = txtRut.Text;
+                E.Apellidos = txtApellidos.Text;
+                E.Nombres = txtNombres.Text;
+                E.Sexo = rbnMasculino.Checked == true ? 'M' : 'F';
+                E.FechaNac = Convert.ToDateTime(dateTimePicker1.Value);
+                E.Direccion = txtDireccion.Text;
+                MessageBoxEx.Show(E.ActualizarEmpleado(), "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                Limpiar();
+
+            }
+
         }
 
         private void Limpiar() {
-            cbxEstadoCivil.SelectedIndex = 0;
             txtApellidos.Clear();
             txtDireccion.Clear();
-            txtDni.Clear();
+            txtRut.Clear();
+            txtDv.Clear();
             txtNombres.Clear();
             rbnMasculino.Checked = true;
             dateTimePicker1.Value = DateTime.Now;
@@ -85,8 +105,13 @@ namespace Capa_de_Presentacion
         {
             if (Program.IdCargo != 0)
                 comboBox1.SelectedValue = Program.IdCargo;
-            else
-                cbxEstadoCivil.SelectedIndex = 0;
+            //else
+               // cbxEstadoCivil.SelectedIndex = 0;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

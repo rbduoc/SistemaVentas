@@ -44,8 +44,8 @@ namespace Capa_de_Presentacion
                 dataGridView1.Rows[i].Cells[3].Value = dt.Rows[i][3].ToString();
                 dataGridView1.Rows[i].Cells[4].Value = dt.Rows[i][4].ToString();
                 dataGridView1.Rows[i].Cells[5].Value = dt.Rows[i][5].ToString();
-                dataGridView1.Rows[i].Cells[6].Value = Convert.ToDateTime(dt.Rows[i][6].ToString()).ToShortDateString();
-                dataGridView1.Rows[i].Cells[7].Value = dt.Rows[i][7].ToString();
+                dataGridView1.Rows[i].Cells[6].Value = dt.Rows[i][6].ToString();
+                dataGridView1.Rows[i].Cells[7].Value = Convert.ToDateTime(dt.Rows[i][7].ToString()).ToShortDateString();
                 dataGridView1.Rows[i].Cells[8].Value = dt.Rows[i][8].ToString();
                 dataGridView1.Rows[i].Cells[9].Value = dt.Rows[i][9].ToString();
             }
@@ -57,6 +57,7 @@ namespace Capa_de_Presentacion
             RegistrarEmpleados E = new RegistrarEmpleados();
             E.txtIdE.Text = "0";
             Program.IdCargo = 0;
+            Program.Evento = 0;
             E.Show();
             dataGridView1.ClearSelection();
         }
@@ -68,25 +69,17 @@ namespace Capa_de_Presentacion
                     RegistrarEmpleados E = new RegistrarEmpleados();
                     E.txtIdE.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                     Program.IdCargo = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
-                    E.txtDni.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    E.txtApellidos.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    E.txtNombres.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    if (dataGridView1.CurrentRow.Cells[5].Value.ToString() == "M")
+                    E.txtRut.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    E.txtDv.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    E.txtApellidos.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    E.txtNombres.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    if (dataGridView1.CurrentRow.Cells[6].Value.ToString() == "M")
                         E.rbnMasculino.Checked = true;
                     else
                         E.rbnFemenino.Checked = true;
-                    E.dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[6].Value.ToString());
-                    E.txtDireccion.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                    if (dataGridView1.CurrentRow.Cells[8].Value.ToString() == "S")
-                        E.cbxEstadoCivil.SelectedIndex = 1;
-                    else
-                        if (dataGridView1.CurrentRow.Cells[8].Value.ToString() == "C")
-                            E.cbxEstadoCivil.SelectedIndex = 2;
-                        else
-                            if (dataGridView1.CurrentRow.Cells[8].Value.ToString() == "D")
-                                E.cbxEstadoCivil.SelectedIndex = 3;
-                            else
-                                E.cbxEstadoCivil.SelectedIndex = 4;
+                    E.dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[7].Value.ToString());
+                    E.txtDireccion.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                    Program.Evento = 1;
                     E.Show();
                 }
                 dataGridView1.ClearSelection(); 
@@ -151,8 +144,8 @@ namespace Capa_de_Presentacion
                         dataGridView1.Rows[i].Cells[3].Value = dt.Rows[i][3].ToString();
                         dataGridView1.Rows[i].Cells[4].Value = dt.Rows[i][4].ToString();
                         dataGridView1.Rows[i].Cells[5].Value = dt.Rows[i][5].ToString();
-                        dataGridView1.Rows[i].Cells[6].Value = Convert.ToDateTime(dt.Rows[i][6].ToString()).ToShortDateString();
-                        dataGridView1.Rows[i].Cells[7].Value = dt.Rows[i][7].ToString();
+                        dataGridView1.Rows[i].Cells[6].Value = dt.Rows[i][6].ToString();
+                        dataGridView1.Rows[i].Cells[7].Value = Convert.ToDateTime(dt.Rows[i][7].ToString()).ToShortDateString();
                         dataGridView1.Rows[i].Cells[8].Value = dt.Rows[i][8].ToString();
                         dataGridView1.Rows[i].Cells[9].Value = dt.Rows[i][9].ToString();
                     }
