@@ -78,8 +78,8 @@ namespace CapaLogicaNegocio
            try{
                lst.Add(new Parametro("@ID_EMPLEADO", IdEmpleado));
                lst.Add(new Parametro("@ID_CARGO", IdCargo));
-               lst.Add(new Parametro("@RUT", rut));
-                lst.Add(new Parametro("@DV", rut));
+               lst.Add(new Parametro("@RUT", Rut));
+                lst.Add(new Parametro("@DV", Dv));
                 lst.Add(new Parametro("@APELLIDOS", Apellidos));
                lst.Add(new Parametro("@NOMBRES", Nombres));
                lst.Add(new Parametro("@SEXO", Sexo));
@@ -103,8 +103,8 @@ namespace CapaLogicaNegocio
             {
                 lst.Add(new Parametro("@ID_EMPLEADO", IdEmpleado));
                 lst.Add(new Parametro("@ID_CARGO", IdCargo));
-                lst.Add(new Parametro("@RUT", rut));
-                lst.Add(new Parametro("@DV", rut));
+                lst.Add(new Parametro("@RUT", Rut));
+                lst.Add(new Parametro("@DV", Dv));
                 lst.Add(new Parametro("@APELLIDOS", Apellidos));
                 lst.Add(new Parametro("@NOMBRES", Nombres));
                 lst.Add(new Parametro("@SEXO", Sexo));
@@ -121,8 +121,26 @@ namespace CapaLogicaNegocio
             }
         }
 
+        public String EliminarEmpleado(String id_empleado)
+        {
+            List<Parametro> lst = new List<Parametro>();
+            String Mensaje = "";
+            try
+            {
+                lst.Add(new Parametro("@ID_EMPLEADO", id_empleado));
+                lst.Add(new Parametro("@MENSAJE", "", SqlDbType.VarChar, ParameterDirection.Output, 100));
+                M.EjecutarSP("SVC_DEL_ELIMINA_EMPLEADO", ref lst);
+                return Mensaje = lst[1].Valor.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public DataTable ListadoEmpleados() {
-          return M.Listado("ListadoEmpleados", null);
+          return M.Listado("SVC_SLCT_EMPLEADOS", null);
        }
 
        public String GenerarIdEmpleado() {

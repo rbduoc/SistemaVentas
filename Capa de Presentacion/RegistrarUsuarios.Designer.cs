@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtRut = new System.Windows.Forms.Label();
             this.txtCargo = new System.Windows.Forms.Label();
             this.txtEmpleado = new System.Windows.Forms.Label();
@@ -41,8 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtDV = new System.Windows.Forms.TextBox();
+            this.txtDV = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +64,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Empleado";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 92);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 16);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "DV";
             // 
             // txtRut
             // 
@@ -177,21 +186,14 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Usuario";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 92);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 16);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "DV";
-            // 
             // txtDV
             // 
+            this.txtDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDV.Location = new System.Drawing.Point(70, 92);
             this.txtDV.Name = "txtDV";
             this.txtDV.Size = new System.Drawing.Size(29, 21);
             this.txtDV.TabIndex = 10;
+            this.txtDV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RegistrarUsuarios
             // 
@@ -230,7 +232,7 @@
         public System.Windows.Forms.Label txtEmpleado;
         public System.Windows.Forms.Label txtRut;
         public System.Windows.Forms.Label txtCargo;
-        private System.Windows.Forms.TextBox txtDV;
         private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label txtDV;
     }
 }

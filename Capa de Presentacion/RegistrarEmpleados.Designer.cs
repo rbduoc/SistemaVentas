@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtDv = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -50,8 +52,6 @@
             this.txtRut = new System.Windows.Forms.TextBox();
             this.txtIdE = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtDv = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +69,7 @@
             // 
             this.groupBox1.Controls.Add(this.txtDv);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnGrabar);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtDireccion);
@@ -94,14 +94,31 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // button3
+            // txtDv
             // 
-            this.button3.Location = new System.Drawing.Point(299, 348);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 29);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "&Cancelar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.txtDv.Location = new System.Drawing.Point(175, 98);
+            this.txtDv.Name = "txtDv";
+            this.txtDv.Size = new System.Drawing.Size(51, 21);
+            this.txtDv.TabIndex = 21;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(172, 79);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(27, 16);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "DV";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(299, 348);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 29);
+            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGrabar
             // 
@@ -257,22 +274,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(172, 79);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(27, 16);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "DV";
-            // 
-            // txtDv
-            // 
-            this.txtDv.Location = new System.Drawing.Point(175, 98);
-            this.txtDv.Name = "txtDv";
-            this.txtDv.Size = new System.Drawing.Size(51, 21);
-            this.txtDv.TabIndex = 21;
-            // 
             // RegistrarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,7 +306,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.TextBox txtDireccion;

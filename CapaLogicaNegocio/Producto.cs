@@ -123,5 +123,24 @@ namespace CapaLogicaNegocio
             }
             return Mensaje;
         }
+
+        public String EliminarProducto(String id_producto)
+        {
+            List<Parametro> lst = new List<Parametro>();
+            String Mensaje = "";
+
+            try
+            {
+                lst.Add(new Parametro("@ID_PRODUCTO", id_producto));
+                lst.Add(new Parametro("@MENSAJE", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+                M.EjecutarSP("SVC_DEL_ELIMINA_PRODUCTO", ref lst);
+                Mensaje = lst[1].Valor.ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return Mensaje;
+        }
     }
 }

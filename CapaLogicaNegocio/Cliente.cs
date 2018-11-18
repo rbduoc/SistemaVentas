@@ -109,5 +109,23 @@ namespace CapaLogicaNegocio
             }
             return Mensaje;
         }
+
+        public String EliminaCliente(String id_cliente)
+        {
+            List<Parametro> lst = new List<Parametro>();
+            String Mensaje = "";
+            try
+            {
+                lst.Add(new Parametro("@ID_CLIENTE", id_cliente));
+                lst.Add(new Parametro("@MENSAJE", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
+                M.EjecutarSP("SVC_DEL_ELIMINA_CLIENTE", ref lst);
+                Mensaje = lst[1].Valor.ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return Mensaje;
+        }
     }
 }

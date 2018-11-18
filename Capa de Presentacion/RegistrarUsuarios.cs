@@ -64,6 +64,7 @@ namespace Capa_de_Presentacion
             txtUser.Focus();
             txtCargo.Text = "";
             txtRut.Text = "";
+            txtDV.Text = "";
             txtEmpleado.Text = "";
         }
     }

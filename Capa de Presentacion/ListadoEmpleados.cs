@@ -82,6 +82,10 @@ namespace Capa_de_Presentacion
                     Program.Evento = 1;
                     E.Show();
                 }
+                else
+                {
+                    MessageBoxEx.Show("Debe Seleccionar la Fila a Editar.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
                 dataGridView1.ClearSelection(); 
                 timer1.Start();
             }
@@ -119,6 +123,7 @@ namespace Capa_de_Presentacion
                 U.txtEmpleado.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString() + ", " +
                                      dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 U.txtRut.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                U.txtDV.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 U.txtCargo.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                 U.Show();
             }
@@ -163,6 +168,19 @@ namespace Capa_de_Presentacion
             }
            
         }
-        
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    MessageBoxEx.Show(E.EliminarEmpleado(dataGridView1.CurrentRow.Cells[0].Value.ToString()), "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index); 
+                }
+                else
+                {
+                    MessageBoxEx.Show("Debe Seleccionar la Fila a Eliminar.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            
+        }
     }
 }

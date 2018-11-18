@@ -180,5 +180,18 @@ namespace Capa_de_Presentacion
         {
 
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                MessageBoxEx.Show(P.EliminarProducto(dataGridView1.CurrentRow.Cells[0].Value.ToString()), "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
+            }
+            else
+            {
+                MessageBoxEx.Show("Debe Seleccionar la Fila a Eliminar.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }
