@@ -9,17 +9,45 @@ using CapaEnlaceDatos;
 
 namespace CapaLogicaNegocio
 {
-   public class Ventas
+    public class Ventas
     {
-       Conexion M = new Conexion();
+        Conexion M = new Conexion();
 
-       public int IdEmpleado { get; set; }
-       public int IdCliente { get; set; }
-       public string Serie { get; set; }
-       public string NroComprobante { get; set; }
-       public string TipoDocumento { get; set; }
-       public DateTime FechaVenta { get; set; }
-       public decimal Total { get; set; }
+        private Int32 v_IdEmpleado;
+        private Int32 v_IdCliente;
+        private string v_Serie;
+        private string v_NroComprobante;
+        private DateTime v_FechaVenta;
+        private Int32 v_Total;
+
+
+        public Int32 IdEmpleado { 
+            get { return v_IdEmpleado; }
+            set { v_IdEmpleado = value; }
+        }
+
+       public Int32 IdCliente {
+            get { return v_IdCliente; }
+            set { v_IdCliente = value; }
+
+       }
+       public string Serie {
+            get { return v_Serie; }
+            set { v_Serie = value; }
+
+       }
+       public string NroComprobante {
+            get { return v_NroComprobante; }
+            set { v_NroComprobante = value; }
+       }
+       public DateTime FechaVenta {
+            get { return v_FechaVenta; }
+            set { v_FechaVenta = value; }
+       }
+       public Int32 Total {
+            get { return v_Total; }
+            set { v_Total = value; }
+       }
 
        public String GenerarSerieDocumento()
        {
@@ -35,14 +63,13 @@ namespace CapaLogicaNegocio
            return Convert.ToString(Serie);
        }
 
-       public String NumeroComprobante(String objTipoDocumento) {
+       public String NumeroComprobante() {
            List<Parametro> lst = new List<Parametro>();
            String NroCorrelativo="";
            try{
-               lst.Add(new Parametro("@TipoDocumento", objTipoDocumento));
-               lst.Add(new Parametro("@NroCorrelativo", "", SqlDbType.VarChar, ParameterDirection.Output, 7));
-               M.EjecutarSP("[Numero Correlativo]", ref lst);
-               NroCorrelativo = Convert.ToString(lst[1].Valor.ToString());
+               lst.Add(new Parametro("@NUMERO_CORRELATIVO", "", SqlDbType.VarChar, ParameterDirection.Output, 7));
+               M.EjecutarSP("SVC_GENERA_CORRELATIVO", ref lst);
+               NroCorrelativo = Convert.ToString(lst[0].Valor.ToString());
            }catch (Exception ex){ 
                throw ex;
            }
@@ -70,7 +97,6 @@ namespace CapaLogicaNegocio
                lst.Add(new Parametro("@IdCliente",IdCliente));
                lst.Add(new Parametro("@Serie",Serie));
                lst.Add(new Parametro("@NroDocumento",NroComprobante));
-               lst.Add(new Parametro("@TipoDocumento",TipoDocumento));
                lst.Add(new Parametro("@FechaVenta",FechaVenta));
                lst.Add(new Parametro("@Total",Total));
                lst.Add(new Parametro("@Mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 100));

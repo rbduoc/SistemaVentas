@@ -25,13 +25,7 @@ namespace Capa_de_Presentacion
             InitializeComponent();
         }
 
-        private void rbnFactura_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbnFactura.Checked == true)
-                lblTipo.Text = "FACTURA";
-            else
-                lblTipo.Text = "BOLETA DE VENTA";
-        }
+  
 
         private void rbnBoleta_CheckedChanged(object sender, EventArgs e)
         {
@@ -56,10 +50,8 @@ namespace Capa_de_Presentacion
 
         private void GenerarNumeroComprobante()
         {
-            if (rbnBoleta.Checked == true)
-                lblNroCorrelativo.Text = Ventas.NumeroComprobante("Boleta");
-            else
-                lblNroCorrelativo.Text = Ventas.NumeroComprobante("Factura");
+                lblNroCorrelativo.Text = Ventas.NumeroComprobante();
+
         }
 
         private void btnBusqueda_Click(object sender, EventArgs e)
@@ -253,19 +245,16 @@ namespace Capa_de_Presentacion
 
         private void GuardarVenta()
         {
-            decimal Total=0;
+            Int32 Total=0;
             if (Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value) != "") {
                 for (int i = 0; i < dataGridView1.Rows.Count; i++){
-			        Total=Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value);
+			        Total=Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value);
 			    }
-            string TipoDocumento = "";
-            TipoDocumento = rbnBoleta.Checked == true ? "Boleta" : "Factura";
             Ventas.IdEmpleado=Program.IdEmpleadoLogueado;
             Ventas.IdCliente=Program.IdCliente;
             Ventas.Serie=lblSerie.Text;
             Ventas.NroComprobante=lblNroCorrelativo.Text;
-            Ventas.TipoDocumento=TipoDocumento;
-            Ventas.FechaVenta=Convert.ToDateTime(dateTimePicker1.Value);
+            Ventas.FechaVenta = DateTime.Today; //Convert.ToDateTime(dateTimePicker1.Value);
             Ventas.Total=Total;
             MessageBoxEx.Show(Ventas.RegistrarVenta(),"Sistema de Ventas.",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
@@ -293,7 +282,6 @@ namespace Capa_de_Presentacion
             Program.IdEmpleadoLogueado = 0;
             Program.IdCliente = 0;
             txtIdProducto.Clear();
-            rbnBoleta.Checked = true;
             Program.DocumentoIdentidad = "";
             Program.ApellidosCliente = "";
             Program.NombreCliente = "";

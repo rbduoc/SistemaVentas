@@ -15,46 +15,46 @@ namespace CapaLogicaNegocio
     {
         private Conexion M = new Conexion();
 
-        private Int32 m_IdP;
-        private Int32 m_IdCategoria;
-        private String m_Producto;
-        private String m_Marca;
-        private Int32 m_Stock;
-        private Int32 m_Precio;
+        private Int32 v_IdP;
+        private Int32 v_IdCategoria;
+        private String v_Producto;
+        private String v_Marca;
+        private Int32 v_Stock;
+        private Int32 v_Precio;
 
         public Int32 IdP{
-            get { return m_IdP; }
-            set{m_IdP=value;}
+            get { return v_IdP; }
+            set{ v_IdP = value;}
         }
 
         public Int32 IdCategoria
         {
-            get { return m_IdCategoria; }
-            set { m_IdCategoria = value; }
+            get { return v_IdCategoria; }
+            set { v_IdCategoria = value; }
         }
 
         public String ProductoNombre
         {
-            get { return m_Producto; }
-            set { m_Producto = value; }
+            get { return v_Producto; }
+            set { v_Producto = value; }
         }
 
         public String Marca
         {
-            get { return m_Marca; }
-            set { m_Marca = value; }
+            get { return v_Marca; }
+            set { v_Marca = value; }
         }
 
         public Int32 Stock
         {
-            get { return m_Stock; }
-            set { m_Stock = value; }
+            get { return v_Stock; }
+            set { v_Stock = value; }
         }
 
         public Int32 Precio
         {
-            get { return m_Precio; }
-            set { m_Precio = value; }
+            get { return v_Precio; }
+            set { v_Precio = value; }
         }
 
         public DataTable Listar()
@@ -84,11 +84,11 @@ namespace CapaLogicaNegocio
 
             try
             {
-                lst.Add(new Parametro("@ID_CATEGORIA", m_IdCategoria));
-                lst.Add(new Parametro("@NOMBRE", m_Producto));
-                lst.Add(new Parametro("@MARCA", m_Marca));
-                lst.Add(new Parametro("@STOCK", m_Stock));
-                lst.Add(new Parametro("@PRECIO", m_Precio));
+                lst.Add(new Parametro("@ID_CATEGORIA", v_IdCategoria));
+                lst.Add(new Parametro("@NOMBRE", v_Producto));
+                lst.Add(new Parametro("@MARCA", v_Marca));
+                lst.Add(new Parametro("@STOCK", v_Stock));
+                lst.Add(new Parametro("@PRECIO", v_Precio));
                 lst.Add(new Parametro("@Mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
                 M.EjecutarSP("SVC_INS_REGISTRAR_PRODUCTO", ref lst);
                 Mensaje = lst[5].Valor.ToString();
@@ -107,12 +107,12 @@ namespace CapaLogicaNegocio
 
             try
             {
-                lst.Add(new Parametro("@ID_PRODUCTO",m_IdP));
-                lst.Add(new Parametro("@ID_CATEGORIA", m_IdCategoria));
-                lst.Add(new Parametro("@NOMBRE", m_Producto));
-                lst.Add(new Parametro("@MARCA", m_Marca));
-                lst.Add(new Parametro("@STOCK", m_Stock));
-                lst.Add(new Parametro("@PRECIO", m_Precio));
+                lst.Add(new Parametro("@ID_PRODUCTO",v_IdP));
+                lst.Add(new Parametro("@ID_CATEGORIA", v_IdCategoria));
+                lst.Add(new Parametro("@NOMBRE", v_Producto));
+                lst.Add(new Parametro("@MARCA", v_Marca));
+                lst.Add(new Parametro("@STOCK", v_Stock));
+                lst.Add(new Parametro("@PRECIO", v_Precio));
                 lst.Add(new Parametro("@MENSAJE", "", SqlDbType.VarChar, ParameterDirection.Output, 50));
                 M.EjecutarSP("SVC_UPD_MODIFICA_PRODUCTO", ref lst);
                 Mensaje = lst[6].Valor.ToString();
