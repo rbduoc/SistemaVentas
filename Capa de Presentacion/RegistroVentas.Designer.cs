@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNroCorrelativo = new System.Windows.Forms.Label();
             this.lblSerie = new System.Windows.Forms.Label();
-            this.lblTipo = new System.Windows.Forms.Label();
+            this.lblDocumento = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnBusqueda = new System.Windows.Forms.Button();
@@ -44,8 +44,6 @@
             this.txtDatos = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtIgv = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.btnBusquedaProducto = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtCantidad = new System.Windows.Forms.TextBox();
@@ -59,6 +57,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtIdVenta = new System.Windows.Forms.TextBox();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnRegistrarVenta = new System.Windows.Forms.Button();
+            this.btnEliminarItem = new System.Windows.Forms.Button();
+            this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.IdD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,15 +69,14 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtIdVenta = new System.Windows.Forms.TextBox();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnRegistrarVenta = new System.Windows.Forms.Button();
-            this.btnEliminarItem = new System.Windows.Forms.Button();
-            this.txtIdProducto = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioFactura = new System.Windows.Forms.RadioButton();
+            this.radioBoleta = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,7 +86,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblNroCorrelativo);
             this.panel1.Controls.Add(this.lblSerie);
-            this.panel1.Controls.Add(this.lblTipo);
+            this.panel1.Controls.Add(this.lblDocumento);
             this.panel1.Location = new System.Drawing.Point(437, 17);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 100);
@@ -128,17 +130,17 @@
             this.lblSerie.Size = new System.Drawing.Size(57, 23);
             this.lblSerie.TabIndex = 1;
             // 
-            // lblTipo
+            // lblDocumento
             // 
-            this.lblTipo.BackColor = System.Drawing.Color.GreenYellow;
-            this.lblTipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipo.Location = new System.Drawing.Point(-1, 34);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(200, 29);
-            this.lblTipo.TabIndex = 0;
-            this.lblTipo.Text = "BOLETA DE VENTA";
-            this.lblTipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDocumento.BackColor = System.Drawing.Color.GreenYellow;
+            this.lblDocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDocumento.Location = new System.Drawing.Point(-1, 34);
+            this.lblDocumento.Name = "lblDocumento";
+            this.lblDocumento.Size = new System.Drawing.Size(200, 29);
+            this.lblDocumento.TabIndex = 0;
+            this.lblDocumento.Text = "BOLETA DE VENTA";
+            this.lblDocumento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -157,7 +159,7 @@
             this.groupBox3.Controls.Add(this.txtDatos);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 28);
+            this.groupBox3.Location = new System.Drawing.Point(11, 87);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(413, 82);
             this.groupBox3.TabIndex = 8;
@@ -166,7 +168,7 @@
             // 
             // btnBusqueda
             // 
-            this.btnBusqueda.Location = new System.Drawing.Point(294, 22);
+            this.btnBusqueda.Location = new System.Drawing.Point(269, 23);
             this.btnBusqueda.Name = "btnBusqueda";
             this.btnBusqueda.Size = new System.Drawing.Size(93, 23);
             this.btnBusqueda.TabIndex = 4;
@@ -177,21 +179,21 @@
             // txtDocIdentidad
             // 
             this.txtDocIdentidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDocIdentidad.Location = new System.Drawing.Point(116, 23);
+            this.txtDocIdentidad.Location = new System.Drawing.Point(70, 23);
             this.txtDocIdentidad.Name = "txtDocIdentidad";
             this.txtDocIdentidad.ReadOnly = true;
-            this.txtDocIdentidad.Size = new System.Drawing.Size(172, 21);
+            this.txtDocIdentidad.Size = new System.Drawing.Size(164, 21);
             this.txtDocIdentidad.TabIndex = 3;
             this.txtDocIdentidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 23);
+            this.label5.Location = new System.Drawing.Point(24, 24);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 16);
+            this.label5.Size = new System.Drawing.Size(40, 16);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Doc. Identidad:";
+            this.label5.Text = "RUT:";
             // 
             // txtDatos
             // 
@@ -214,8 +216,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.txtIgv);
-            this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.btnBusquedaProducto);
             this.groupBox4.Controls.Add(this.btnAgregar);
             this.groupBox4.Controls.Add(this.txtCantidad);
@@ -229,28 +229,12 @@
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(13, 134);
+            this.groupBox4.Location = new System.Drawing.Point(11, 184);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(624, 92);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Producto";
-            // 
-            // txtIgv
-            // 
-            this.txtIgv.Location = new System.Drawing.Point(465, 59);
-            this.txtIgv.Name = "txtIgv";
-            this.txtIgv.Size = new System.Drawing.Size(39, 21);
-            this.txtIgv.TabIndex = 13;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(422, 60);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 16);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "I.G.V. :";
             // 
             // btnBusquedaProducto
             // 
@@ -379,11 +363,59 @@
             this.Column5,
             this.Column6});
             this.dataGridView1.GridColor = System.Drawing.Color.DimGray;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 267);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 295);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(625, 211);
             this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
+            // 
+            // txtIdVenta
+            // 
+            this.txtIdVenta.Location = new System.Drawing.Point(768, 52);
+            this.txtIdVenta.Name = "txtIdVenta";
+            this.txtIdVenta.Size = new System.Drawing.Size(51, 20);
+            this.txtIdVenta.TabIndex = 17;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(561, 519);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 25);
+            this.btnSalir.TabIndex = 18;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnRegistrarVenta
+            // 
+            this.btnRegistrarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarVenta.Location = new System.Drawing.Point(404, 519);
+            this.btnRegistrarVenta.Name = "btnRegistrarVenta";
+            this.btnRegistrarVenta.Size = new System.Drawing.Size(126, 25);
+            this.btnRegistrarVenta.TabIndex = 19;
+            this.btnRegistrarVenta.Text = "&Registrar Venta";
+            this.btnRegistrarVenta.UseVisualStyleBackColor = true;
+            this.btnRegistrarVenta.Click += new System.EventHandler(this.btnRegistrarVenta_Click);
+            // 
+            // btnEliminarItem
+            // 
+            this.btnEliminarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarItem.Location = new System.Drawing.Point(263, 519);
+            this.btnEliminarItem.Name = "btnEliminarItem";
+            this.btnEliminarItem.Size = new System.Drawing.Size(110, 25);
+            this.btnEliminarItem.TabIndex = 20;
+            this.btnEliminarItem.Text = "&Eliminar Item";
+            this.btnEliminarItem.UseVisualStyleBackColor = true;
+            this.btnEliminarItem.Click += new System.EventHandler(this.btnEliminarItem_Click);
+            // 
+            // txtIdProducto
+            // 
+            this.txtIdProducto.Location = new System.Drawing.Point(768, 78);
+            this.txtIdProducto.Name = "txtIdProducto";
+            this.txtIdProducto.Size = new System.Drawing.Size(51, 20);
+            this.txtIdProducto.TabIndex = 21;
             // 
             // IdD
             // 
@@ -409,9 +441,9 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Format = "C0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column4.HeaderText = "P. UNIT.";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -419,9 +451,9 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Format = "C0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column3.HeaderText = "IMPORTE";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -442,58 +474,47 @@
             this.Column6.ReadOnly = true;
             this.Column6.Visible = false;
             // 
-            // txtIdVenta
+            // groupBox1
             // 
-            this.txtIdVenta.Location = new System.Drawing.Point(768, 52);
-            this.txtIdVenta.Name = "txtIdVenta";
-            this.txtIdVenta.Size = new System.Drawing.Size(51, 20);
-            this.txtIdVenta.TabIndex = 17;
+            this.groupBox1.Controls.Add(this.radioFactura);
+            this.groupBox1.Controls.Add(this.radioBoleta);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 18);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(192, 51);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tipo Documento";
             // 
-            // btnSalir
+            // radioFactura
             // 
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(562, 484);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 25);
-            this.btnSalir.TabIndex = 18;
-            this.btnSalir.Text = "&Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.radioFactura.AutoSize = true;
+            this.radioFactura.Location = new System.Drawing.Point(114, 24);
+            this.radioFactura.Name = "radioFactura";
+            this.radioFactura.Size = new System.Drawing.Size(71, 20);
+            this.radioFactura.TabIndex = 3;
+            this.radioFactura.Text = "Factura";
+            this.radioFactura.UseVisualStyleBackColor = true;
+            this.radioFactura.CheckedChanged += new System.EventHandler(this.rbnFactura_CheckedChanged);
             // 
-            // btnRegistrarVenta
+            // radioBoleta
             // 
-            this.btnRegistrarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarVenta.Location = new System.Drawing.Point(405, 484);
-            this.btnRegistrarVenta.Name = "btnRegistrarVenta";
-            this.btnRegistrarVenta.Size = new System.Drawing.Size(126, 25);
-            this.btnRegistrarVenta.TabIndex = 19;
-            this.btnRegistrarVenta.Text = "&Registrar Venta";
-            this.btnRegistrarVenta.UseVisualStyleBackColor = true;
-            this.btnRegistrarVenta.Click += new System.EventHandler(this.btnRegistrarVenta_Click);
-            // 
-            // btnEliminarItem
-            // 
-            this.btnEliminarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarItem.Location = new System.Drawing.Point(264, 484);
-            this.btnEliminarItem.Name = "btnEliminarItem";
-            this.btnEliminarItem.Size = new System.Drawing.Size(110, 25);
-            this.btnEliminarItem.TabIndex = 20;
-            this.btnEliminarItem.Text = "&Eliminar Item";
-            this.btnEliminarItem.UseVisualStyleBackColor = true;
-            this.btnEliminarItem.Click += new System.EventHandler(this.btnEliminarItem_Click);
-            // 
-            // txtIdProducto
-            // 
-            this.txtIdProducto.Location = new System.Drawing.Point(768, 78);
-            this.txtIdProducto.Name = "txtIdProducto";
-            this.txtIdProducto.Size = new System.Drawing.Size(51, 20);
-            this.txtIdProducto.TabIndex = 21;
+            this.radioBoleta.AutoSize = true;
+            this.radioBoleta.Checked = true;
+            this.radioBoleta.Location = new System.Drawing.Point(17, 24);
+            this.radioBoleta.Name = "radioBoleta";
+            this.radioBoleta.Size = new System.Drawing.Size(65, 20);
+            this.radioBoleta.TabIndex = 2;
+            this.radioBoleta.TabStop = true;
+            this.radioBoleta.Text = "Boleta";
+            this.radioBoleta.UseVisualStyleBackColor = true;
             // 
             // RegistroVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 515);
+            this.ClientSize = new System.Drawing.Size(649, 556);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtIdProducto);
             this.Controls.Add(this.btnEliminarItem);
             this.Controls.Add(this.btnRegistrarVenta);
@@ -518,6 +539,8 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,7 +553,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNroCorrelativo;
         private System.Windows.Forms.Label lblSerie;
-        private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.Label lblDocumento;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtDatos;
@@ -553,8 +576,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtIdVenta;
-        private System.Windows.Forms.TextBox txtIgv;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnRegistrarVenta;
         private System.Windows.Forms.Button btnEliminarItem;
@@ -566,5 +587,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioFactura;
+        private System.Windows.Forms.RadioButton radioBoleta;
     }
 }

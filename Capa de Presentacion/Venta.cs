@@ -6,33 +6,33 @@ using System.Threading.Tasks;
 
 namespace Capa_de_Presentacion
 {
-   public class clsVenta
+   public class Venta
     {
-       public int IdVenta { get; set; }
-       public int Cantidad { get; set; }
+       public Int32 IdVenta { get; set; }
+       public Int32 Cantidad { get; set; }
        public string Descripcion { get; set; }
-       public decimal PrecioVenta { get; set; }
-       public int IdProducto { get; set; }
-       public decimal Igv { get; set; }
-       public decimal SubTotal { get; set; }
+       public Int32 PrecioVenta { get; set; }
+       public Int32 IdProducto { get; set; }
+       public double Iva { get; set; }
+       public Int32 SubTotal { get; set; }
 
-       public clsVenta() {
+       public Venta() {
            Cantidad = 0;
            Descripcion = "";
            PrecioVenta = 0;
            IdVenta = 0;
            IdProducto = 0;
-           Igv = 0;
+            Iva = 0;
            SubTotal = 0;
        }
-       public clsVenta(int objIdVenta,int objCantidad,string objDescripcion,decimal objPVenta,
-           int objIdProducto, decimal objIgv, decimal objSubTotal){
+       public Venta(int objIdVenta,int objCantidad,string objDescripcion, Int32 objPVenta,
+           int objIdProducto, double objIva, Int32 objSubTotal){
            IdVenta = objIdVenta;
            Cantidad =objCantidad;
            Descripcion = objDescripcion;
            PrecioVenta = objPVenta;
            IdProducto = objIdProducto;
-           Igv = objIgv;
+            Iva = objIva;
            SubTotal = objSubTotal;
        }
 

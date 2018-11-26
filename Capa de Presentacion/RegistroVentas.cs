@@ -18,7 +18,7 @@ namespace Capa_de_Presentacion
         Ventas Ventas = new Ventas();
         DetalleVenta Detalle = new DetalleVenta();
 
-        private List<clsVenta> lst = new List<clsVenta>();
+        private List<Venta> lst = new List<Venta>();
 
         public RegistroVentas()
         {
@@ -80,30 +80,25 @@ namespace Capa_de_Presentacion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            clsVenta V = new clsVenta();
-            Decimal Porcentaje = 0; Decimal SubTotal;
+            Venta V = new Venta();
+            //Int32 SubTotal;
             if(this.txtDocIdentidad.Text.Trim()!=""){
                 if (txtDescripcion.Text.Trim() != ""){
                     if (txtCantidad.Text.Trim() != ""){
                         if (Convert.ToInt32(txtCantidad.Text) >= 0){
                             if (Convert.ToInt32(txtCantidad.Text) <= Convert.ToInt32(txtStock.Text)){
-                                if (txtIgv.Text.Trim() != ""){
                                     V.IdProducto = Convert.ToInt32(txtIdProducto.Text);
                                     V.IdVenta = Convert.ToInt32(txtIdVenta.Text);
                                     V.Descripcion = txtDescripcion.Text + " - " + txtMarca.Text;
                                     V.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                                    V.PrecioVenta = Convert.ToDecimal(txtPVenta.Text);
-                                    Porcentaje = (Convert.ToDecimal(txtIgv.Text) / 100) + 1;
-                                    SubTotal = ((Convert.ToDecimal(txtPVenta.Text) * Convert.ToInt32(txtCantidad.Text)) / Porcentaje);
-                                    V.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(txtIgv.Text) / (100)), 2);
-                                    V.SubTotal = Math.Round(SubTotal, 2);
+                                    V.PrecioVenta = Convert.ToInt32(txtPVenta.Text);
+                                    //V.Iva = 1.19; //(Convert.ToDecimal(txtIgv.Text) / 100) + 1;
+                                    V.SubTotal = Convert.ToInt32((V.PrecioVenta * V.Cantidad));
+                                    // = 19;//Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(txtIgv.Text) / (100)), 2);
+                                    //V.SubTotal = Math.Round(SubTotal, 2);
                                     lst.Add(V);
                                     LlenarGrilla();
                                     Limpiar();
-                                }else {
-                                    MessageBoxEx.Show("Por Favor Ingrese I.G.V.","Sistema de Ventas.",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                                    txtIgv.Focus();
-                                }
                             }else{
                                 MessageBoxEx.Show("Stock Insuficiente para Realizar la Venta.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                             }
@@ -127,7 +122,7 @@ namespace Capa_de_Presentacion
         }
 
         private void LlenarGrilla() {
-            Decimal SumaSubTotal = 0; Decimal SumaIgv=0; Decimal SumaTotal=0;
+            Int32 SumaSubTotal = 0; double iva = 1.19; Int32 SumaTotal =0;
             dataGridView1.Rows.Clear();
             for (int i = 0; i < lst.Count; i++)
             {
@@ -138,9 +133,9 @@ namespace Capa_de_Presentacion
                 dataGridView1.Rows[i].Cells[3].Value = lst[i].PrecioVenta;
                 dataGridView1.Rows[i].Cells[4].Value = lst[i].SubTotal;
                 dataGridView1.Rows[i].Cells[5].Value = lst[i].IdProducto;
-                dataGridView1.Rows[i].Cells[6].Value = lst[i].Igv;
-                SumaSubTotal += Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value);
-                SumaIgv += Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value);
+                dataGridView1.Rows[i].Cells[6].Value = lst[i].Iva;
+                SumaSubTotal += Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value);
+                //SumaIva += Convert.ToInt32(dataGridView1.Rows[i].Cells[6].Value);
             }
 
             dataGridView1.Rows.Add();
@@ -148,11 +143,11 @@ namespace Capa_de_Presentacion
             dataGridView1.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
             dataGridView1.Rows[lst.Count + 1].Cells[4].Value = SumaSubTotal;
             dataGridView1.Rows.Add();
-            dataGridView1.Rows[lst.Count + 2].Cells[3].Value = "      I.G.V.        %";
-            dataGridView1.Rows[lst.Count + 2].Cells[4].Value = SumaIgv;
+            dataGridView1.Rows[lst.Count + 2].Cells[3].Value = "      IVA.        %";
+            dataGridView1.Rows[lst.Count + 2].Cells[4].Value = "19%";
             dataGridView1.Rows.Add();
             dataGridView1.Rows[lst.Count + 3].Cells[3].Value = "     TOTAL     S/.";
-            SumaTotal += SumaSubTotal + SumaIgv;
+            SumaTotal += Convert.ToInt32(SumaSubTotal * iva);
             dataGridView1.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
             dataGridView1.ClearSelection();
         }
@@ -275,7 +270,6 @@ namespace Capa_de_Presentacion
         }
 
         private void Limpiar1() {
-            txtIgv.Clear();
             txtDocIdentidad.Clear();
             txtDatos.Clear();
             dataGridView1.Rows.Clear();
@@ -285,6 +279,19 @@ namespace Capa_de_Presentacion
             Program.DocumentoIdentidad = "";
             Program.ApellidosCliente = "";
             Program.NombreCliente = "";
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void rbnFactura_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioFactura.Checked == true)
+                lblDocumento.Text = "FACTURA";
+            else
+                lblDocumento.Text = "BOLETA";
         }
         //private void btnQuitar_Click(object sender, EventArgs e)
         //{
