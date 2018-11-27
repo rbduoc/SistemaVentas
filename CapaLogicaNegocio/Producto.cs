@@ -142,5 +142,10 @@ namespace CapaLogicaNegocio
             }
             return Mensaje;
         }
+
+        public DataTable RankingProductos()
+        {
+            return M.Listado("SVC_SLCT_RANKING_PRODUCTO", null);
+        }
     }
 }

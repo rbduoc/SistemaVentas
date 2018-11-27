@@ -16,7 +16,6 @@ namespace CapaLogicaNegocio
        public Int32 IdVenta { get; set; }
        public Int32 Cantidad { get; set; }
        public Decimal PUnitario { get; set; }
-       public Decimal Igv { get; set; }
        public Decimal SubTotal { get; set; }
 
        public String RegistrarDetalleVenta() {
@@ -27,11 +26,10 @@ namespace CapaLogicaNegocio
                lst.Add(new Parametro("@IdVenta",IdVenta));
                lst.Add(new Parametro("@Cantidad",Cantidad));
                lst.Add(new Parametro("@PrecioUnitario",PUnitario));
-               lst.Add(new Parametro("@Igv",Igv));
                lst.Add(new Parametro("@SubTotal",SubTotal));
                lst.Add(new Parametro("@Mensaje","",SqlDbType.VarChar,ParameterDirection.Output,100));
-               M.EjecutarSP("RegistrarDetalleVenta", ref lst);
-               Mensaje = lst[6].Valor.ToString();
+               M.EjecutarSP("SVC_INS_REGISTRA_DETALLE_VENTA", ref lst);
+               Mensaje = lst[5].Valor.ToString();
            }catch (Exception ex){
                throw ex;
            }

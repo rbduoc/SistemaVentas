@@ -29,14 +29,14 @@ namespace Capa_de_Presentacion
 
         private void rbnBoleta_CheckedChanged(object sender, EventArgs e)
         {
-            GenerarNumeroComprobante();
+           // GenerarNumeroComprobante();
         }
 
         private void FrmVentas_Load(object sender, EventArgs e)
         {
-            GenerarNumeroComprobante();
+            //GenerarNumeroComprobante();
             GenerarIdVenta();
-            GenerarSeriedeDocumento();
+            //GenerarSeriedeDocumento();
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
@@ -44,15 +44,15 @@ namespace Capa_de_Presentacion
             txtIdVenta.Text = Ventas.GenerarIdVenta();
         }
 
-        private void GenerarSeriedeDocumento() {
-            lblSerie.Text = Ventas.GenerarSerieDocumento();
-        }
+        //private void GenerarSeriedeDocumento() {
+        //    lblSerie.Text = Ventas.GenerarSerieDocumento();
+        //}
 
-        private void GenerarNumeroComprobante()
-        {
-                lblNroCorrelativo.Text = Ventas.NumeroComprobante();
+        //private void GenerarNumeroComprobante()
+        //{
+        //        lblNroCorrelativo.Text = Ventas.NumeroComprobante();
 
-        }
+        //}
 
         private void btnBusqueda_Click(object sender, EventArgs e)
         {
@@ -139,16 +139,30 @@ namespace Capa_de_Presentacion
             }
 
             dataGridView1.Rows.Add();
-            dataGridView1.Rows.Add();
-            dataGridView1.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
-            dataGridView1.Rows[lst.Count + 1].Cells[4].Value = SumaSubTotal;
-            dataGridView1.Rows.Add();
-            dataGridView1.Rows[lst.Count + 2].Cells[3].Value = "      IVA.        %";
-            dataGridView1.Rows[lst.Count + 2].Cells[4].Value = "19%";
-            dataGridView1.Rows.Add();
-            dataGridView1.Rows[lst.Count + 3].Cells[3].Value = "     TOTAL     S/.";
-            SumaTotal += Convert.ToInt32(SumaSubTotal * iva);
-            dataGridView1.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
+
+
+            if (radioFactura.Checked == true)
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
+                dataGridView1.Rows[lst.Count + 1].Cells[4].Value = SumaSubTotal;
+
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[lst.Count + 2].Cells[3].Value = "      IVA.        %";
+                dataGridView1.Rows[lst.Count + 2].Cells[4].Value = "19";
+
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[lst.Count + 3].Cells[3].Value = "     TOTAL     S/.";
+                SumaTotal += Convert.ToInt32(SumaSubTotal * iva);
+                dataGridView1.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
+            } else {
+
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[lst.Count + 1].Cells[3].Value = "     TOTAL     S/.";
+                SumaTotal += Convert.ToInt32(SumaSubTotal);
+                dataGridView1.Rows[lst.Count + 1].Cells[4].Value = SumaTotal;
+            }
+
             dataGridView1.ClearSelection();
         }
 
@@ -208,22 +222,22 @@ namespace Capa_de_Presentacion
                     GuardarVenta();
                     try{
                         for (int i = 0; i < dataGridView1.Rows.Count; i++){
-                            Decimal SumaIgv = 0; Decimal SumaSubTotal = 0;
+                               Decimal SumaSubTotal = 0;
                             if (Convert.ToString(dataGridView1.Rows[i].Cells[2].Value) != ""){
-                                SumaIgv += Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value);
                                 SumaSubTotal += Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value);
                                 GuardarDetalleVenta(
                                 Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value),
                                 Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),
                                 Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value),
-                                Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value),
-                                SumaIgv, SumaSubTotal
+                                Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value), SumaSubTotal
                                 );
                                 //DevComponents.DotNetBar.MessageBoxEx.Show("Contiene Datos.");
                             }else{
                                 //DevComponents.DotNetBar.MessageBoxEx.Show("Fila Vacia.");
                             }
                         }
+                        dataGridView1.Rows.Clear();
+                        lst.Clear();
                     }
                     catch (Exception ex)
                     {
@@ -245,28 +259,28 @@ namespace Capa_de_Presentacion
                 for (int i = 0; i < dataGridView1.Rows.Count; i++){
 			        Total=Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value);
 			    }
+            string TipoDocumento = "";
+            TipoDocumento = radioBoleta.Checked == true ? "Boleta" : "Factura";
+
             Ventas.IdEmpleado=Program.IdEmpleadoLogueado;
             Ventas.IdCliente=Program.IdCliente;
-            Ventas.Serie=lblSerie.Text;
-            Ventas.NroComprobante=lblNroCorrelativo.Text;
+            Ventas.TipoDocumento = TipoDocumento;
             Ventas.FechaVenta = DateTime.Today; //Convert.ToDateTime(dateTimePicker1.Value);
             Ventas.Total=Total;
             MessageBoxEx.Show(Ventas.RegistrarVenta(),"Sistema de Ventas.",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
 
-        private void GuardarDetalleVenta(Int32 objIdProducto, Int32 objIdVenta, Int32 objCantidad, Decimal objPUnitario,
-            Decimal objIgv, Decimal objSubTotal){
+        private void GuardarDetalleVenta(Int32 objIdProducto, Int32 objIdVenta, Int32 objCantidad, Decimal objPUnitario, Decimal objSubTotal){
                     Detalle.IdProducto = objIdProducto;
                     Detalle.IdVenta = objIdVenta;
                     Detalle.Cantidad = objCantidad;
                     Detalle.PUnitario = objPUnitario;
-                    Detalle.Igv = objIgv;
                     Detalle.SubTotal = objSubTotal;
                     Detalle.RegistrarDetalleVenta();
                     Limpiar1();
                     GenerarIdVenta();
-                    GenerarNumeroComprobante();
+                    //GenerarNumeroComprobante();
         }
 
         private void Limpiar1() {

@@ -15,8 +15,7 @@ namespace CapaLogicaNegocio
 
         private Int32 v_IdEmpleado;
         private Int32 v_IdCliente;
-        private string v_Serie;
-        private string v_NroComprobante;
+        private String v_TipoDocumento;
         private DateTime v_FechaVenta;
         private Int32 v_Total;
 
@@ -31,16 +30,13 @@ namespace CapaLogicaNegocio
             set { v_IdCliente = value; }
 
        }
-       public string Serie {
-            get { return v_Serie; }
-            set { v_Serie = value; }
+       public String TipoDocumento
+       {
+           get { return v_TipoDocumento; }
+           set { v_TipoDocumento = value; }
 
        }
-       public string NroComprobante {
-            get { return v_NroComprobante; }
-            set { v_NroComprobante = value; }
-       }
-       public DateTime FechaVenta {
+        public DateTime FechaVenta {
             get { return v_FechaVenta; }
             set { v_FechaVenta = value; }
        }
@@ -49,39 +45,39 @@ namespace CapaLogicaNegocio
             set { v_Total = value; }
        }
 
-       public String GenerarSerieDocumento()
-       {
-           List<Parametro> lst = new List<Parametro>();
-           String Serie="";
-           try{
-               lst.Add(new Parametro("@Serie", "", SqlDbType.VarChar, ParameterDirection.Output, 5));
-               M.EjecutarSP("[Serie Documento]", ref lst);
-               Serie = Convert.ToString(lst[0].Valor.ToString());
-           }catch (Exception ex){
-               throw ex;
-           }
-           return Convert.ToString(Serie);
-       }
+       //public String GenerarSerieDocumento()
+       //{
+       //    List<Parametro> lst = new List<Parametro>();
+       //    String Serie="";
+       //    try{
+       //        lst.Add(new Parametro("@Serie", "", SqlDbType.VarChar, ParameterDirection.Output, 5));
+       //        M.EjecutarSP("[Serie Documento]", ref lst);
+       //        Serie = Convert.ToString(lst[0].Valor.ToString());
+       //    }catch (Exception ex){
+       //        throw ex;
+       //    }
+       //    return Convert.ToString(Serie);
+       //}
 
-       public String NumeroComprobante() {
-           List<Parametro> lst = new List<Parametro>();
-           String NroCorrelativo="";
-           try{
-               lst.Add(new Parametro("@NUMERO_CORRELATIVO", "", SqlDbType.VarChar, ParameterDirection.Output, 7));
-               M.EjecutarSP("SVC_GENERA_CORRELATIVO", ref lst);
-               NroCorrelativo = Convert.ToString(lst[0].Valor.ToString());
-           }catch (Exception ex){ 
-               throw ex;
-           }
-           return Convert.ToString(NroCorrelativo);
-       }
+       //public String NumeroComprobante() {
+       //    List<Parametro> lst = new List<Parametro>();
+       //    String NroCorrelativo="";
+       //    try{
+       //        lst.Add(new Parametro("@NUMERO_CORRELATIVO", "", SqlDbType.VarChar, ParameterDirection.Output, 7));
+       //        M.EjecutarSP("SVC_PRC_GENERA_CORRELATIVO", ref lst);
+       //        NroCorrelativo = Convert.ToString(lst[0].Valor.ToString());
+       //    }catch (Exception ex){ 
+       //        throw ex;
+       //    }
+       //    return Convert.ToString(NroCorrelativo);
+       //}
 
        public String GenerarIdVenta() {
            List<Parametro> lst = new List<Parametro>();
            int objIdVenta;
            try{
                lst.Add(new Parametro("@IdVenta", "", SqlDbType.Int, ParameterDirection.Output, 4));
-               M.EjecutarSP("GenerarIdVenta", ref lst);
+               M.EjecutarSP("SVC_PRC_GENERA_ID_VENTA", ref lst);
                objIdVenta = Convert.ToInt32(lst[0].Valor.ToString());
            }catch (Exception ex){
                throw ex;
@@ -95,13 +91,12 @@ namespace CapaLogicaNegocio
            try{
                lst.Add(new Parametro("@IdEmpleado",IdEmpleado));
                lst.Add(new Parametro("@IdCliente",IdCliente));
-               lst.Add(new Parametro("@Serie",Serie));
-               lst.Add(new Parametro("@NroDocumento",NroComprobante));
-               lst.Add(new Parametro("@FechaVenta",FechaVenta));
+                lst.Add(new Parametro("@TipoDocumento", TipoDocumento));
+                lst.Add(new Parametro("@FechaVenta",FechaVenta));
                lst.Add(new Parametro("@Total",Total));
                lst.Add(new Parametro("@Mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 100));
-               M.EjecutarSP("RegistrarVenta", ref lst);
-               return Mensaje=lst[7].Valor.ToString();
+               M.EjecutarSP("SVC_INS_REGISTRA_VENTA", ref lst);
+               return Mensaje=lst[5].Valor.ToString();
            }catch (Exception ex){
                throw ex;
            }

@@ -164,5 +164,10 @@ namespace CapaLogicaNegocio
            return dt = M.Listado("Buscar_Empleado", lst);
        }
 
+        public DataTable VentasPorVendedor()
+        {
+            return M.Listado("SVC_SLCT_VENTAS_POR_VENDEDOR", null);
+        }
+
     }
 }

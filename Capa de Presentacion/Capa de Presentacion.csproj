@@ -70,6 +70,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RankingClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RankingClientes.Designer.cs">
+      <DependentUpon>RankingClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RankingProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RankingProductos.Designer.cs">
+      <DependentUpon>RankingProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Venta.cs" />
     <Compile Include="ListadoCargos.cs">
       <SubType>Form</SubType>
@@ -157,6 +175,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentasXVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentasXVendedor.Designer.cs">
+      <DependentUpon>VentasXVendedor.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ListadoCargos.resx">
       <DependentUpon>ListadoCargos.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +192,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RankingClientes.resx">
+      <DependentUpon>RankingClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RankingProductos.resx">
+      <DependentUpon>RankingProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrarCargo.resx">
       <DependentUpon>RegistrarCargo.cs</DependentUpon>
@@ -203,6 +233,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes.resx">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentasXVendedor.resx">
+      <DependentUpon>VentasXVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

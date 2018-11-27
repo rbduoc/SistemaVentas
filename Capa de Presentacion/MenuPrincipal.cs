@@ -29,6 +29,14 @@ namespace Capa_de_Presentacion
         {
             timer1.Interval = 500;
             timer1.Start();
+
+            if (Program.CargoEmpleadoLogueado == "Vendedor")
+            {
+                btnUsuarios.Hide();
+                btnReportes.Hide();
+                btnReportes.Hide();
+            }
+
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
@@ -76,6 +84,24 @@ namespace Capa_de_Presentacion
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            if (MessageBoxEx.Show("¿Está Seguro que Desea Cerrar Sesion.?", "Sistema de Ventas.", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+            {
+                Login L = new Login();
+                L.Show();
+                this.Hide();
+            }
+            
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            Reportes R = new Reportes();
+
+            R.Show();
         }
     }
 }

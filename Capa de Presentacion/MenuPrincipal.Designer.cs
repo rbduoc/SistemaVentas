@@ -43,6 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -119,6 +120,7 @@
             this.btnReportes.TabIndex = 0;
             this.btnReportes.Text = "&Reportes";
             this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnVentas
             // 
@@ -189,11 +191,22 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Location = new System.Drawing.Point(706, 12);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(102, 23);
+            this.btnCerrarSesion.TabIndex = 8;
+            this.btnCerrarSesion.Text = "Cerrar Sesion";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 411);
+            this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnVentas);
@@ -237,7 +250,6 @@
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnEmpleados;
-
-
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }

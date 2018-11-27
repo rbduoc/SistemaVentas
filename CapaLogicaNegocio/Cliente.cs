@@ -127,5 +127,10 @@ namespace CapaLogicaNegocio
             }
             return Mensaje;
         }
+
+        public DataTable RankingClientes()
+        {
+            return M.Listado("SVC_SLCT_RANKING_CLIENTES", null);
+        }
     }
 }
