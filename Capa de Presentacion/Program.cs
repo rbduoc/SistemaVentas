@@ -14,25 +14,25 @@ namespace Capa_de_Presentacion
          public static int Evento;
 
         //Datos del Cliente
-         public static int IdCliente;
+         public static Int32 IdCliente;
          public static String DocumentoIdentidad;
          public static String NombreCliente;
          public static String ApellidosCliente;
 
         //Datos del Producto
-         public static int IdProducto;
+         public static Int32 IdProducto;
          public static String Descripcion;
          public static String Marca;
          public static Int32 Stock;
-         public static Decimal PrecioVenta;
+         public static Int32 PrecioVenta;
 
         //Datos del Empleado
-         public static int IdCargo;
+         public static Int32 IdCargo;
          public static String EstadoCivil="";
-         public static int IdEmpleado;
+         public static Int32 IdEmpleado;
 
         //Variables de Sesion
-        public static int IdEmpleadoLogueado;
+        public static Int32 IdEmpleadoLogueado;
         public static String NombreEmpleadoLogueado;
         public static String CargoEmpleadoLogueado;
 

@@ -101,5 +101,22 @@ namespace CapaLogicaNegocio
                throw ex;
            }
        }
+
+        public DataTable VentasDiarias(DateTime fecha)
+        {
+            DataTable dt = new DataTable();
+            List<Parametro> lst = new List<Parametro>();
+            try
+            {
+                lst.Add(new Parametro("@FechaConsultada", fecha));
+                dt = M.Listado("SVC_SLCT_VENTAS_DIARIAS", lst);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        }
+
     }
 }

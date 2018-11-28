@@ -46,6 +46,7 @@ namespace Capa_de_Presentacion
                     dataGridView1.Rows[i].Cells[3].Value = dt.Rows[i][3].ToString();
                     dataGridView1.Rows[i].Cells[4].Value = dt.Rows[i][4].ToString();
                     dataGridView1.Rows[i].Cells[5].Value = dt.Rows[i][5].ToString();
+                    dataGridView1.Rows[i].Cells[6].Value = dt.Rows[i][6].ToString();
                 }
             }
             catch (Exception ex)
@@ -97,9 +98,9 @@ namespace Capa_de_Presentacion
                 P.txtIdP.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 P.IdC.Text= dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 P.txtProducto.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                P.txtMarca.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                P.txtPVenta.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                P.txtStock.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                P.txtMarca.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                P.txtPVenta.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                P.txtStock.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
                 P.Show();
                 //if (dataGridView1.SelectedRows.Count > 0)
                     Program.Evento = 1;
@@ -136,6 +137,7 @@ namespace Capa_de_Presentacion
                     dataGridView1.Rows[i].Cells[3].Value = dt.Rows[i][3].ToString();
                     dataGridView1.Rows[i].Cells[4].Value = dt.Rows[i][4].ToString();
                     dataGridView1.Rows[i].Cells[5].Value = dt.Rows[i][5].ToString();
+                    dataGridView1.Rows[i].Cells[6].Value = dt.Rows[i][6].ToString();
 
                 }
             }
@@ -170,9 +172,9 @@ namespace Capa_de_Presentacion
         {
                 Program.IdProducto = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                 Program.Descripcion = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                Program.Marca = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                Program.PrecioVenta = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[4].Value.ToString());
-                Program.Stock = Convert.ToInt32(dataGridView1.CurrentRow.Cells[5].Value.ToString());
+                Program.Marca = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                Program.PrecioVenta = Convert.ToInt32(dataGridView1.CurrentRow.Cells[5].Value.ToString());
+                Program.Stock = Convert.ToInt32(dataGridView1.CurrentRow.Cells[6].Value.ToString());
                 this.Close();
         }
 

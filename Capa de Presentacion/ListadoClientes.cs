@@ -44,8 +44,8 @@ namespace Capa_de_Presentacion
                     dataGridView1.Rows[i].Cells[0].Value = dt.Rows[i][0].ToString();
                     dataGridView1.Rows[i].Cells[1].Value = dt.Rows[i][1].ToString();
                     dataGridView1.Rows[i].Cells[2].Value = dt.Rows[i][2].ToString();
-                    dataGridView1.Rows[i].Cells[3].Value = dt.Rows[i][3].ToString();
                     dataGridView1.Rows[i].Cells[4].Value = dt.Rows[i][4].ToString();
+                    dataGridView1.Rows[i].Cells[3].Value = dt.Rows[i][3].ToString();
                     dataGridView1.Rows[i].Cells[5].Value = dt.Rows[i][5].ToString();
                     dataGridView1.Rows[i].Cells[6].Value = dt.Rows[i][6].ToString();
                 }
@@ -174,8 +174,8 @@ namespace Capa_de_Presentacion
         {
             Program.IdCliente = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             Program.DocumentoIdentidad = dataGridView1.CurrentRow.Cells[1].Value.ToString() +'-'+dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            Program.ApellidosCliente = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             Program.NombreCliente = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            Program.ApellidosCliente = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             this.Close();
         }
 

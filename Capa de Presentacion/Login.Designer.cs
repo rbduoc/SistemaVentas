@@ -67,16 +67,16 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 17);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(330, 75);
+            this.groupBox1.Size = new System.Drawing.Size(285, 121);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Iniciar Sesión";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(248, 42);
+            this.btnCancelar.Location = new System.Drawing.Point(166, 86);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 26);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 29);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "&Salir";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -84,7 +84,7 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(247, 11);
+            this.btnIngresar.Location = new System.Drawing.Point(70, 86);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 29);
             this.btnIngresar.TabIndex = 4;
@@ -107,16 +107,16 @@
             this.txtUser.Size = new System.Drawing.Size(152, 21);
             this.txtUser.TabIndex = 2;
             // 
-            // FrmLogin
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 106);
+            this.ClientSize = new System.Drawing.Size(313, 150);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
-            this.Name = "FrmLogin";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acceso";
             this.Load += new System.EventHandler(this.FrmLogin_Load);

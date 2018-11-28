@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,31 +36,19 @@
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Gold;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Cambria", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(820, 134);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "SISTEMA DE VENTAS";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Gold;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(4, 70);
             this.label2.Name = "label2";
@@ -71,7 +58,7 @@
             // 
             // lblFecha
             // 
-            this.lblFecha.BackColor = System.Drawing.Color.Gold;
+            this.lblFecha.BackColor = System.Drawing.Color.White;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.Location = new System.Drawing.Point(68, 70);
             this.lblFecha.Name = "lblFecha";
@@ -82,7 +69,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Gold;
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(4, 90);
             this.label3.Name = "label3";
@@ -92,7 +79,7 @@
             // 
             // lblHora
             // 
-            this.lblHora.BackColor = System.Drawing.Color.Gold;
+            this.lblHora.BackColor = System.Drawing.Color.White;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.Location = new System.Drawing.Point(68, 92);
             this.lblHora.Name = "lblHora";
@@ -114,7 +101,7 @@
             // btnReportes
             // 
             this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportes.Location = new System.Drawing.Point(629, 310);
+            this.btnReportes.Location = new System.Drawing.Point(639, 251);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(170, 40);
             this.btnReportes.TabIndex = 0;
@@ -133,21 +120,10 @@
             this.btnVentas.UseVisualStyleBackColor = true;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Location = new System.Drawing.Point(629, 242);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(170, 40);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "&Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
             // btnClientes
             // 
             this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.Location = new System.Drawing.Point(629, 176);
+            this.btnClientes.Location = new System.Drawing.Point(639, 176);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(170, 40);
             this.btnClientes.TabIndex = 0;
@@ -169,7 +145,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Gold;
+            this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(9, 7);
             this.label4.Name = "label4";
@@ -179,7 +155,7 @@
             // 
             // lblUsuario
             // 
-            this.lblUsuario.BackColor = System.Drawing.Color.Gold;
+            this.lblUsuario.BackColor = System.Drawing.Color.White;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.Location = new System.Drawing.Point(17, 24);
             this.lblUsuario.Name = "lblUsuario";
@@ -193,25 +169,38 @@
             // 
             // btnCerrarSesion
             // 
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.Location = new System.Drawing.Point(706, 12);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(102, 23);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(103, 26);
             this.btnCerrarSesion.TabIndex = 8;
-            this.btnCerrarSesion.Text = "Cerrar Sesion";
+            this.btnCerrarSesion.Text = "&Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Ink Free", 27F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(250, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(355, 47);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Sistema Beer Heaven";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 411);
+            this.ClientSize = new System.Drawing.Size(821, 411);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.btnClientes);
@@ -219,11 +208,13 @@
             this.Controls.Add(this.btnProductos);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "MenuPrincipal";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Activated += new System.EventHandler(this.FrmMenuPrincipal_Activated);
@@ -235,15 +226,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnVentas;
-        private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Label label4;
@@ -251,5 +239,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Label label1;
     }
 }

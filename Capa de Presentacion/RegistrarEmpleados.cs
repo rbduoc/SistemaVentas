@@ -30,7 +30,7 @@ namespace Capa_de_Presentacion
             CargarComboBox();
         }
 
-        private void CargarComboBox(){
+        public void CargarComboBox(){
             comboBox1.DataSource = C.Listar();
             comboBox1.DisplayMember = "Descripcion";
             comboBox1.ValueMember = "IdCargo";
@@ -38,7 +38,7 @@ namespace Capa_de_Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            RegistrarCargo C = new RegistrarCargo();
+            RegistrarCargo C = new RegistrarCargo(this);
             C.Show();
         }
 
@@ -50,8 +50,8 @@ namespace Capa_de_Presentacion
                 E.IdCargo = Convert.ToInt32(comboBox1.SelectedValue);
                 E.Rut = Convert.ToInt32(txtRut.Text);
                 E.Dv = txtRut.Text;
-                E.Apellidos = txtApellidos.Text;
                 E.Nombres = txtNombres.Text;
+                E.Apellidos = txtApellidos.Text;
                 E.Sexo = rbnMasculino.Checked == true ? 'M' : 'F';
                 E.FechaNac = Convert.ToDateTime(dateTimePicker1.Value);
                 E.Direccion = txtDireccion.Text;

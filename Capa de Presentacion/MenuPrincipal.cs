@@ -32,8 +32,7 @@ namespace Capa_de_Presentacion
 
             if (Program.CargoEmpleadoLogueado == "Vendedor")
             {
-                btnUsuarios.Hide();
-                btnReportes.Hide();
+                //btnUsuarios.Hide();
                 btnReportes.Hide();
             }
 
@@ -102,6 +101,11 @@ namespace Capa_de_Presentacion
             Reportes R = new Reportes();
 
             R.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

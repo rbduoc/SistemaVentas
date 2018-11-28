@@ -36,7 +36,7 @@ namespace CapaLogicaNegocio
         }
 
         public DataTable Listar() {
-            return M.Listado("ListarCategoria",null);
+            return M.Listado("SVC_SLCT_CATEGORIA",null);
         }
 
         public String RegistrarCategoria() {
@@ -46,7 +46,7 @@ namespace CapaLogicaNegocio
             {
                 lst.Add(new Parametro("@Descripcion",m_Descripcion));
                 lst.Add(new Parametro("@Mensaje","",SqlDbType.VarChar,ParameterDirection.Output,50));
-                M.EjecutarSP("RegistrarCategoria",ref lst);
+                M.EjecutarSP("SVC_INS_REGISTRA_CATEGORIA", ref lst);
                 Mensaje = lst[1].Valor.ToString();
             }
             catch (Exception ex)
@@ -62,7 +62,7 @@ namespace CapaLogicaNegocio
             try
             {
                 lst.Add(new Parametro("@Datos", objDescripcin));
-                return dt = M.Listado("BuscarCategoria",lst);
+                return dt = M.Listado("SVC_SLCT_FILTRA_CATEGORIA", lst);
             }
             catch (Exception ex)
             {    
@@ -78,7 +78,7 @@ namespace CapaLogicaNegocio
                 lst.Add(new Parametro("@IdC",m_IdC));
                 lst.Add(new Parametro("@Descripcion",m_Descripcion));
                 lst.Add(new Parametro("@Mensaje","",SqlDbType.VarChar,ParameterDirection.Output,50));
-                M.EjecutarSP("ActualizarCategoria", ref lst);
+                M.EjecutarSP("SVC_UPD_MODIFICA_CATEGORIA", ref lst);
                 Mensaje = lst[2].Valor.ToString();
             }
             catch (Exception ex)

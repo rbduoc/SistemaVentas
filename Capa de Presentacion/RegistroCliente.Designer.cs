@@ -78,7 +78,7 @@
             // 
             // txtNombres
             // 
-            this.txtNombres.Location = new System.Drawing.Point(14, 124);
+            this.txtNombres.Location = new System.Drawing.Point(14, 83);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(298, 21);
             this.txtNombres.TabIndex = 3;
@@ -109,7 +109,7 @@
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(14, 74);
+            this.txtApellidos.Location = new System.Drawing.Point(14, 126);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(298, 21);
             this.txtApellidos.TabIndex = 3;
@@ -118,7 +118,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 56);
+            this.label3.Location = new System.Drawing.Point(11, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 16);
             this.label3.TabIndex = 2;
@@ -136,7 +136,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 105);
+            this.label2.Location = new System.Drawing.Point(11, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 16);
             this.label2.TabIndex = 1;

@@ -33,5 +33,11 @@ namespace Capa_de_Presentacion
             RankingClientes RC = new RankingClientes();
             RC.Show();
         }
+
+        private void btnVentaDiaria_Click(object sender, EventArgs e)
+        {
+            VentasDiarias VD = new VentasDiarias();
+            VD.Show();
+        }
     }
 }

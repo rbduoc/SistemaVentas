@@ -17,9 +17,18 @@ namespace Capa_de_Presentacion
     {
         private Cargo C = new Cargo();
 
+        private RegistrarEmpleados registraReferencia;
+
         public RegistrarCargo()
         {
             InitializeComponent();
+        }
+
+        public RegistrarCargo(RegistrarEmpleados referencia)
+        {
+            InitializeComponent();
+
+            registraReferencia = referencia;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -42,6 +51,7 @@ namespace Capa_de_Presentacion
                             MessageBoxEx.Show(Mensaje, "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }else{
                             MessageBoxEx.Show(Mensaje, "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            registraReferencia.CargarComboBox();
                             Limpiar();
                         }
                         }else{

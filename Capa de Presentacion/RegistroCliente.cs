@@ -47,8 +47,8 @@ namespace Capa_de_Presentacion
                                 {
                                     C.Rut = Convert.ToInt32(txtRut.Text);
                                     C.Dv = txtDV.Text;
-                                    C.Apellidos = txtApellidos.Text;
                                     C.Nombres = txtNombres.Text;
+                                    C.Apellidos = txtApellidos.Text;
                                     C.Direccion = txtDireccion.Text;
                                     C.Telefono = txtTelefono.Text;
                                     MessageBoxEx.Show(C.RegistrarCliente(), "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Information);

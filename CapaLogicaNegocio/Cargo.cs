@@ -31,7 +31,7 @@ namespace CapaLogicaNegocio
         }
 
         public DataTable Listar() {
-            return M.Listado("ListarCargo", null);
+            return M.Listado("SVC_SLCT_CARGO", null);
         }
 
         public String RegistrarCargo() {
@@ -41,7 +41,7 @@ namespace CapaLogicaNegocio
             {
                 lst.Add(new Parametro("@Descripcion", m_Descripcion));
                 lst.Add(new Parametro("@Mensaje","",SqlDbType.VarChar,ParameterDirection.Output,50));
-                M.EjecutarSP("RegistrarCargo",ref lst);
+                M.EjecutarSP("SVC_INS_REGISTRA_CARGO", ref lst);
                 Mensaje = lst[1].Valor.ToString();
             }
             catch (Exception ex)
@@ -59,7 +59,7 @@ namespace CapaLogicaNegocio
                 lst.Add(new Parametro("@IdCargo", m_IdCargo));
                 lst.Add(new Parametro("@Descripcion", m_Descripcion));
                 lst.Add(new Parametro("@Mensaje","",SqlDbType.VarChar,ParameterDirection.Output,100));
-                M.EjecutarSP("ActualizarCargo", ref lst);
+                M.EjecutarSP("SVC_UPD_MODIFICA_CARGO", ref lst);
                 Mensaje = lst[2].Valor.ToString();
             }
             catch (Exception ex)
@@ -75,7 +75,7 @@ namespace CapaLogicaNegocio
             try
             {
                 lst.Add(new Parametro("@Descripcion",objDescripcion));
-                return dt = M.Listado("BuscarCargo",lst);
+                return dt = M.Listado("SVC_SLCT_FILTRA_CARGO", lst);
             }
             catch (Exception ex)
             {

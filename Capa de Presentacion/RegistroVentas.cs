@@ -64,12 +64,20 @@ namespace Capa_de_Presentacion
         {
             //txtIdProducto.Text = Program.IdCliente+"";
             txtDocIdentidad.Text = Program.DocumentoIdentidad;
-            txtDatos.Text = Program.ApellidosCliente + ", " + Program.NombreCliente;
+            txtDatos.Text = Program.NombreCliente + ", " + Program.ApellidosCliente;
             txtIdProducto.Text = Program.IdProducto+"";
             txtDescripcion.Text = Program.Descripcion;
             txtMarca.Text = Program.Marca;
             txtStock.Text = Program.Stock+"";
-            txtPVenta.Text = Program.PrecioVenta+"";
+
+            if (radioBoleta.Checked == true)
+            {
+                txtPVenta.Text = Program.PrecioVenta + "";
+            } else {
+                txtPVenta.Text = Convert.ToInt32((Program.PrecioVenta / 1.19)).ToString() + "";
+            }
+
+            
         }
 
         private void btnBusquedaProducto_Click(object sender, EventArgs e)
@@ -287,8 +295,8 @@ namespace Capa_de_Presentacion
             txtDocIdentidad.Clear();
             txtDatos.Clear();
             dataGridView1.Rows.Clear();
-            Program.IdEmpleadoLogueado = 0;
-            Program.IdCliente = 0;
+            //Program.IdEmpleadoLogueado = 0;
+            //Program.IdCliente = 0;
             txtIdProducto.Clear();
             Program.DocumentoIdentidad = "";
             Program.ApellidosCliente = "";
@@ -302,10 +310,7 @@ namespace Capa_de_Presentacion
 
         private void rbnFactura_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioFactura.Checked == true)
-                lblDocumento.Text = "FACTURA";
-            else
-                lblDocumento.Text = "BOLETA";
+    
         }
         //private void btnQuitar_Click(object sender, EventArgs e)
         //{

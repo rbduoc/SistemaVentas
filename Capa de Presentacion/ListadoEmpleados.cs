@@ -71,8 +71,8 @@ namespace Capa_de_Presentacion
                     Program.IdCargo = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
                     E.txtRut.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                     E.txtDv.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    E.txtApellidos.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    E.txtNombres.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    E.txtNombres.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    E.txtApellidos.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                     if (dataGridView1.CurrentRow.Cells[6].Value.ToString() == "M")
                         E.rbnMasculino.Checked = true;
                     else
@@ -120,8 +120,8 @@ namespace Capa_de_Presentacion
             if (MessageBoxEx.Show("¿Desea Crear Una Cuenta de Usuario Para este Empleado.?","Sistema de Ventas.", MessageBoxButtons.YesNoCancel) == DialogResult.Yes) {
                 RegistrarUsuarios U = new RegistrarUsuarios();
                 Program.IdEmpleado = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                U.txtEmpleado.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString() + ", " +
-                                     dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                U.txtEmpleado.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString() + ", " +
+                                     dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 U.txtRut.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 U.txtDV.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 U.txtCargo.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();

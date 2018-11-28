@@ -88,6 +88,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 384);
             this.Controls.Add(this.dataGridView1);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RankingClientes";
             this.Text = "RankingClientes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

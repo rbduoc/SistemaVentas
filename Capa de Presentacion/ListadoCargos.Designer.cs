@@ -173,6 +173,7 @@
             this.Controls.Add(this.txtBuscarCargo);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "ListadoCargos";
             this.Text = "FrmListadoCargos";

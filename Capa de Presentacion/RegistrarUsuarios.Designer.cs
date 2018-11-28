@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDV = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtRut = new System.Windows.Forms.Label();
             this.txtCargo = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtDV = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +64,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Empleado";
+            // 
+            // txtDV
+            // 
+            this.txtDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDV.Location = new System.Drawing.Point(70, 92);
+            this.txtDV.Name = "txtDV";
+            this.txtDV.Size = new System.Drawing.Size(29, 21);
+            this.txtDV.TabIndex = 10;
+            this.txtDV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -126,7 +135,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Apellidos y Nombres:";
+            this.label1.Text = "Nombres y Apellidos:";
             // 
             // groupBox2
             // 
@@ -185,15 +194,6 @@
             this.label4.Size = new System.Drawing.Size(55, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Usuario";
-            // 
-            // txtDV
-            // 
-            this.txtDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDV.Location = new System.Drawing.Point(70, 92);
-            this.txtDV.Name = "txtDV";
-            this.txtDV.Size = new System.Drawing.Size(29, 21);
-            this.txtDV.TabIndex = 10;
-            this.txtDV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RegistrarUsuarios
             // 

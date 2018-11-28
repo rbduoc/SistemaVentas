@@ -79,9 +79,9 @@ namespace CapaLogicaNegocio
                lst.Add(new Parametro("@ID_EMPLEADO", IdEmpleado));
                lst.Add(new Parametro("@ID_CARGO", IdCargo));
                lst.Add(new Parametro("@RUT", Rut));
-                lst.Add(new Parametro("@DV", Dv));
-                lst.Add(new Parametro("@APELLIDOS", Apellidos));
+               lst.Add(new Parametro("@DV", Dv));
                lst.Add(new Parametro("@NOMBRES", Nombres));
+               lst.Add(new Parametro("@APELLIDOS", Apellidos));
                lst.Add(new Parametro("@SEXO", Sexo));
                lst.Add(new Parametro("@FECHA_NAC", FechaNac));
                lst.Add(new Parametro("@DIRECCION", Direccion));
@@ -161,7 +161,7 @@ namespace CapaLogicaNegocio
            DataTable dt = new DataTable();
            List<Parametro> lst = new List<Parametro>();
            lst.Add(new Parametro("@Datos", objDatos));
-           return dt = M.Listado("Buscar_Empleado", lst);
+           return dt = M.Listado("SVC_SLCT_FILTRA_EMPLEADO", lst);
        }
 
         public DataTable VentasPorVendedor()

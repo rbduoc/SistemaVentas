@@ -72,8 +72,8 @@ namespace CapaLogicaNegocio
             {
                 lst.Add(new Parametro("@RUT", rut));
                 lst.Add(new Parametro("@DV", dv));
+                lst.Add(new Parametro("@NOMBRES", nombres));
                 lst.Add(new Parametro("@APELLIDOS",apellidos));
-                lst.Add(new Parametro("@NOMBRES",nombres));
                 lst.Add(new Parametro("@DIRECCION",direccion));
                 lst.Add(new Parametro("@TELEFONO",telefono));
                 lst.Add(new Parametro("@MENSAJE","",SqlDbType.VarChar,ParameterDirection.Output,50));

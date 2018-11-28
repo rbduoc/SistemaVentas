@@ -36,7 +36,7 @@ namespace Capa_de_Presentacion
             ListarElementos();
         }
 
-        private void ListarElementos() {
+        public void ListarElementos() {
             if (IdC.Text.Trim() != "")
             {
                 cbxCategoria.DisplayMember = "Descripcion";
@@ -116,7 +116,7 @@ namespace Capa_de_Presentacion
 
         private void btnCategoria_Click(object sender, EventArgs e)
         {
-            RegistrarCategoria C = new RegistrarCategoria();
+            RegistrarCategoria C = new RegistrarCategoria(this);
             C.Show();
         }
 

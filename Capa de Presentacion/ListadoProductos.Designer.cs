@@ -35,17 +35,18 @@
             this.txtBuscarProducto = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -87,8 +88,9 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
-            this.IdCategoria,
+            this.IdC,
             this.DescripcionProducto,
+            this.IdCategoria,
             this.Marca,
             this.Precio,
             this.Stock});
@@ -99,54 +101,6 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
-            // 
-            // IdProducto
-            // 
-            this.IdProducto.HeaderText = "IdP";
-            this.IdProducto.Name = "IdProducto";
-            this.IdProducto.ReadOnly = true;
-            this.IdProducto.Visible = false;
-            // 
-            // IdCategoria
-            // 
-            this.IdCategoria.HeaderText = "IdC";
-            this.IdCategoria.Name = "IdCategoria";
-            this.IdCategoria.ReadOnly = true;
-            this.IdCategoria.Visible = false;
-            // 
-            // DescripcionProducto
-            // 
-            this.DescripcionProducto.HeaderText = "Descripción del Producto";
-            this.DescripcionProducto.Name = "DescripcionProducto";
-            this.DescripcionProducto.ReadOnly = true;
-            this.DescripcionProducto.Width = 245;
-            // 
-            // Marca
-            // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            this.Marca.ReadOnly = true;
-            this.Marca.Width = 150;
-            // 
-            // Precio
-            // 
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Precio.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Width = 85;
-            // 
-            // Stock
-            // 
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Stock.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
-            this.Stock.ReadOnly = true;
-            this.Stock.Width = 40;
             // 
             // btnCancelar
             // 
@@ -197,6 +151,60 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // IdProducto
+            // 
+            this.IdProducto.HeaderText = "IdP";
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.ReadOnly = true;
+            this.IdProducto.Visible = false;
+            // 
+            // IdC
+            // 
+            this.IdC.HeaderText = "IdC";
+            this.IdC.Name = "IdC";
+            this.IdC.ReadOnly = true;
+            this.IdC.Visible = false;
+            // 
+            // DescripcionProducto
+            // 
+            this.DescripcionProducto.HeaderText = "Descripción del Producto";
+            this.DescripcionProducto.Name = "DescripcionProducto";
+            this.DescripcionProducto.ReadOnly = true;
+            this.DescripcionProducto.Width = 245;
+            // 
+            // IdCategoria
+            // 
+            this.IdCategoria.HeaderText = "Estilo";
+            this.IdCategoria.Name = "IdCategoria";
+            this.IdCategoria.ReadOnly = true;
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
+            this.Marca.Width = 150;
+            // 
+            // Precio
+            // 
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.Width = 85;
+            // 
+            // Stock
+            // 
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Stock.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            this.Stock.ReadOnly = true;
+            this.Stock.Width = 40;
+            // 
             // ListadoProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,11 +218,11 @@
             this.Controls.Add(this.txtBuscarProducto);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "ListadoProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmRegistro de Productos";
+            this.Text = "Registro de Productos";
             this.Load += new System.EventHandler(this.FrmProductos_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -233,12 +241,13 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
         public System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdC;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
-        private System.Windows.Forms.Button btnEliminar;
     }
 }

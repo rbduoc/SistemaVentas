@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblDocumento = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnBusqueda = new System.Windows.Forms.Button();
@@ -69,45 +66,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioFactura = new System.Windows.Forms.RadioButton();
             this.radioBoleta = new System.Windows.Forms.RadioButton();
-            this.panel1.SuspendLayout();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.lblDocumento);
-            this.panel1.Location = new System.Drawing.Point(437, 17);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 70);
-            this.panel1.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(198, 34);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Beer Heaven ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDocumento
-            // 
-            this.lblDocumento.BackColor = System.Drawing.Color.GreenYellow;
-            this.lblDocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDocumento.Location = new System.Drawing.Point(-1, 34);
-            this.lblDocumento.Name = "lblDocumento";
-            this.lblDocumento.Size = new System.Drawing.Size(200, 35);
-            this.lblDocumento.TabIndex = 0;
-            this.lblDocumento.Text = "BOLETA DE VENTA";
-            this.lblDocumento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -126,7 +90,7 @@
             this.groupBox3.Controls.Add(this.txtDatos);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(11, 87);
+            this.groupBox3.Location = new System.Drawing.Point(13, 52);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(413, 82);
             this.groupBox3.TabIndex = 8;
@@ -196,7 +160,7 @@
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(11, 184);
+            this.groupBox4.Location = new System.Drawing.Point(13, 150);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(624, 92);
             this.groupBox4.TabIndex = 9;
@@ -330,7 +294,7 @@
             this.Column5,
             this.Column6});
             this.dataGridView1.GridColor = System.Drawing.Color.DimGray;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 295);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 261);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(625, 211);
             this.dataGridView1.TabIndex = 14;
@@ -361,9 +325,9 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle1.Format = "C0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Format = "C0";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column4.HeaderText = "P. UNIT.";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -371,9 +335,9 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle2.Format = "C0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Format = "C0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column3.HeaderText = "IMPORTE";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -404,7 +368,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(561, 519);
+            this.btnSalir.Location = new System.Drawing.Point(559, 494);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 25);
             this.btnSalir.TabIndex = 18;
@@ -415,7 +379,7 @@
             // btnRegistrarVenta
             // 
             this.btnRegistrarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarVenta.Location = new System.Drawing.Point(404, 519);
+            this.btnRegistrarVenta.Location = new System.Drawing.Point(402, 494);
             this.btnRegistrarVenta.Name = "btnRegistrarVenta";
             this.btnRegistrarVenta.Size = new System.Drawing.Size(126, 25);
             this.btnRegistrarVenta.TabIndex = 19;
@@ -426,7 +390,7 @@
             // btnEliminarItem
             // 
             this.btnEliminarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarItem.Location = new System.Drawing.Point(263, 519);
+            this.btnEliminarItem.Location = new System.Drawing.Point(261, 494);
             this.btnEliminarItem.Name = "btnEliminarItem";
             this.btnEliminarItem.Size = new System.Drawing.Size(110, 25);
             this.btnEliminarItem.TabIndex = 20;
@@ -446,7 +410,7 @@
             this.groupBox1.Controls.Add(this.radioFactura);
             this.groupBox1.Controls.Add(this.radioBoleta);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 18);
+            this.groupBox1.Location = new System.Drawing.Point(442, 52);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(192, 51);
             this.groupBox1.TabIndex = 22;
@@ -476,11 +440,23 @@
             this.radioBoleta.Text = "Boleta";
             this.radioBoleta.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(196, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(268, 40);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Ventas Beer Heaven";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // RegistroVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 556);
+            this.ClientSize = new System.Drawing.Size(649, 529);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtIdProducto);
             this.Controls.Add(this.btnEliminarItem);
@@ -491,15 +467,14 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "RegistroVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Ventas";
             this.Activated += new System.EventHandler(this.FrmVentas_Activated);
             this.Load += new System.EventHandler(this.FrmVentas_Load);
-            this.panel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -513,10 +488,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblDocumento;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtDatos;
@@ -553,5 +524,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioFactura;
         private System.Windows.Forms.RadioButton radioBoleta;
+        private System.Windows.Forms.Label label2;
     }
 }
