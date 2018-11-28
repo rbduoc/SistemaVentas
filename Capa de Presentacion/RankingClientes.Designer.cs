@@ -72,7 +72,7 @@
             // 
             // Apellidos_Cliente
             // 
-            this.Apellidos_Cliente.HeaderText = "Apellidos_Cliente";
+            this.Apellidos_Cliente.HeaderText = "Apellidos Cliente";
             this.Apellidos_Cliente.Name = "Apellidos_Cliente";
             this.Apellidos_Cliente.ReadOnly = true;
             // 
